@@ -1,3 +1,6 @@
+//Elaine Agustina
+//03081220037
+
 public class elaine {
     public static void main(String[] args) {
         String nama = "Elaine";
