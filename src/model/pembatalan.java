@@ -1,5 +1,6 @@
 /*
  * Nama: Elaine Agustina
+ * 
  */
 package model;
 
