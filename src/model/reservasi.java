@@ -1,5 +1,5 @@
 /*
-* Nama : Adelia Tabita Sihotang 
+* Nama:Adelia Tabita Sihotang 
 */
 
 package model;
