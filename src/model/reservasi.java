@@ -17,7 +17,7 @@ public class reservasi {
  * Jumlah Tiket Tersedia: Jumlah tiket yang tersedia untuk setiap jenis tiket dan konser.
  * Tempat Konser: Informasi lokasi atau tempat di mana konser akan diadakan.
  * Daftar Tempat Duduk: Daftar tempat duduk yang tersedia dalam venue konser.
- * Tipe Tempat Duduk: Klasifikasi atau kategori tempat duduk yang tersedia, seperti VIP, reguler, atau premium.
+ * Tipe Tempat Duduk: Klasifikasi atau kategori tempat duduk yang tersedia, seperti VIP,atau reguler.
  * Tugas:
  * Menampilkan Daftar Konser: Menampilkan daftar konser musik yang tersedia untuk reservasi tiket.
  * Memilih Konser: Memilih konser musik yang ingin dihadiri oleh pengguna.
