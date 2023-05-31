@@ -7,7 +7,7 @@ public class jadwalkonser {
 /*
  * Deskripsi: Tampilan Jadwal Konser
  * Atribut:
- * Nama Konser: 
+ * Nama Konser
  * Nama artis/ group musik
  * 
  * Tugas:
