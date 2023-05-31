@@ -22,4 +22,50 @@ Menampilkan harga tiket yang sudah dipilih sebelumnya
 Menampilkan tempat lokasi yang harus dituju oleh customer
 Menampilkan lokasi tempat duduk mana yang akan diduduki oleh customer berdasarkan tipe tiket yang ia beli
  */
+
+String daftarKonser;
+String jenisTiket;
+double harga;
+String tempatKonser;
+String tipeTempatDuduk;
+
+    public String getDaftarKonser() {
+        return this.daftarKonser;
+    }
+
+    public void setDaftarKonser(String daftarKonser) {
+        this.daftarKonser = daftarKonser;
+    }
+
+    public String getJenisTiket() {
+        return this.jenisTiket;
+    }
+
+    public void setJenisTiket(String jenisTiket) {
+        this.jenisTiket = jenisTiket;
+    }
+
+    public double getHarga() {
+        return this.harga;
+    }
+
+    public void setHarga(double harga) {
+        this.harga = harga;
+    }
+
+    public String getTempatKonser() {
+        return this.tempatKonser;
+    }
+
+    public void setTempatKonser(String tempatKonser) {
+        this.tempatKonser = tempatKonser;
+    }
+
+    public String getTipeTempatDuduk() {
+        return this.tipeTempatDuduk;
+    }
+
+    public void setTipeTempatDuduk(String tipeTempatDuduk) {
+        this.tipeTempatDuduk = tipeTempatDuduk;
+    }
 }

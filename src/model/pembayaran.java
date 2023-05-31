@@ -4,10 +4,7 @@
 package model;
 
 public class pembayaran {
-    
-}
-
-/*
+    /*
 * Deskripsi:
 *  Atribut:
 *      - Metode pembayaran 
@@ -24,3 +21,62 @@ public class pembayaran {
 *      - Menampilkan harga tiket yang sudah dipilih sebelumnya
 *      - Memperlihatkan nilai yang perlu dibayar oleh pengguna
 */
+
+String metodePembayaran;
+int noKartuKredit;
+int jumlahTiket;
+String jenisTiket;
+double harga;
+double totalPembayaran;
+
+    public String getMetodePembayaran() {
+        return this.metodePembayaran;
+    }
+
+    public void setMetodePembayaran(String metodePembayaran) {
+        this.metodePembayaran = metodePembayaran;
+    }
+
+    public int getNoKartuKredit() {
+        return this.noKartuKredit;
+    }
+
+    public void setNoKartuKredit(int noKartuKredit) {
+        this.noKartuKredit = noKartuKredit;
+    }
+
+    public int getJumlahTiket() {
+        return this.jumlahTiket;
+    }
+
+    public void setJumlahTiket(int jumlahTiket) {
+        this.jumlahTiket = jumlahTiket;
+    }
+
+    public String getJenisTiket() {
+        return this.jenisTiket;
+    }
+
+    public void setJenisTiket(String jenisTiket) {
+        this.jenisTiket = jenisTiket;
+    }
+
+    public double getHarga() {
+        return this.harga;
+    }
+
+    public void setHarga(double harga) {
+        this.harga = harga;
+    }
+
+    public double getTotalPembayaran() {
+        return this.totalPembayaran;
+    }
+
+    public void setTotalPembayaran(double totalPembayaran) {
+        this.totalPembayaran = totalPembayaran;
+    }
+}
+
+
+
