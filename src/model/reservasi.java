@@ -5,8 +5,7 @@
 package model;
 
 public class reservasi {
-    
-}
+
 /*
  * Deskripsi : 
  * Atribut :
@@ -28,3 +27,71 @@ public class reservasi {
  * Memilih Tempat Duduk: Memilih tempat duduk spesifik dari tempat duduk yang tersedia.
  * Menghitung Harga: Menghitung harga total tiket berdasarkan jenis tiket, jumlah tiket, dan tempat duduk yang dipilih.
  */
+
+    public String getDaftarKonser() {
+        return this.daftarKonser;
+    }
+
+    public void setDaftarKonser(String daftarKonser) {
+        this.daftarKonser = daftarKonser;
+    }
+
+    public String getJenisTiket() {
+        return this.jenisTiket;
+    }
+
+    public void setJenisTiket(String jenisTiket) {
+        this.jenisTiket = jenisTiket;
+    }
+
+    public double getHargaTiket() {
+        return this.hargaTiket;
+    }
+
+    public void setHargaTiket(double hargaTiket) {
+        this.hargaTiket = hargaTiket;
+    }
+
+    public Integer getJumlahTiketTersedia() {
+        return this.jumlahTiketTersedia;
+    }
+
+    public void setJumlahTiketTersedia(Integer jumlahTiketTersedia) {
+        this.jumlahTiketTersedia = jumlahTiketTersedia;
+    }
+
+    public String getTempatKonser() {
+        return this.TempatKonser;
+    }
+
+    public void setTempatKonser(String TempatKonser) {
+        this.TempatKonser = TempatKonser;
+    }
+
+    public String getDaftarTempatDuduk() {
+        return this.daftarTempatDuduk;
+    }
+
+    public void setDaftarTempatDuduk(String daftarTempatDuduk) {
+        this.daftarTempatDuduk = daftarTempatDuduk;
+    }
+
+    public String getTipeTempatDuduk() {
+        return this.tipeTempatDuduk;
+    }
+
+    public void setTipeTempatDuduk(String tipeTempatDuduk) {
+        this.tipeTempatDuduk = tipeTempatDuduk;
+    }
+
+    String daftarKonser;
+    String jenisTiket;
+    double hargaTiket;
+    Integer jumlahTiketTersedia;
+    String TempatKonser;
+    String daftarTempatDuduk;
+    String tipeTempatDuduk;
+
+}
+
+
