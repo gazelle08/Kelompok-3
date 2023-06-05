@@ -23,7 +23,7 @@ public class pembayaran {
 */
 
 String metodePembayaran;
-long noKartuKredit;
+int noKartuKredit;
 int jumlahTiket;
 String jenisTiket;
 double harga;

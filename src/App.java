@@ -1,10 +1,14 @@
 import model.jadwalkonser;
+import model.pembatalan;
+import model.pembayaran;
 import model.reservasi;
 
 public class App {
     public static void main(String[] args) {
         initJadwalKonser();
         initReservasi();
+        initPembayaran();
+        initPembatalan();
     }
 
     public static void initJadwalKonser() {
@@ -50,5 +54,61 @@ public class App {
         System.out.println("Data Reservasi:");
         System.out.println("Daftar Konser: " + dataReservasi.getDaftarKonser());
         System.out.println("Harga Tiket: " + dataReservasi.getHargaTiket());
+    }
+
+    public static void initPembayaran() {
+        pembayaran dataPembayaran = new pembayaran();
+
+        dataPembayaran.setMetodePembayaran("Kartu Kredit");
+        dataPembayaran.setNoKartuKredit(44443333);
+        dataPembayaran.setJumlahTiket(1);
+        dataPembayaran.setJenisTiket("Tiket Reguler");
+        dataPembayaran.setHarga(100000.0);
+        dataPembayaran.setTotalPembayaran(100000.0);
+
+        System.out.println();
+        System.out.println("Data Pembayaran: ");
+        System.out.println(dataPembayaran.toString());
+
+        pembayaran dataPembayaran2 = new pembayaran("Visa", 11223344, 2, "Tiket VIP", 5000000.0, 10000000.0);
+        cetakPembayaran(dataPembayaran2);
+
+        pembayaran dataPembayaran3 = new pembayaran("Mastercard", 99887766, 3, "Tiket Reguler", 300000.0, 900000.0);
+        cetakPembayaran(dataPembayaran3);
+
+        pembayaran dataPembayaran4 = new pembayaran("American Express", 66226633, 4, "Tiket Reguler", 7000000.0, 28000000.0);
+        cetakPembayaran(dataPembayaran4);
+    }
+
+    public static void cetakPembayaran(pembayaran dataPembayaran) {
+        System.out.println("Data Pembayaran");
+        System.out.println("Jenis Tiket: " + dataPembayaran.getJenisTiket());
+        System.out.println("Total Pembayaran: " + dataPembayaran.getTotalPembayaran());
+    }
+
+    public static void initPembatalan() {
+        pembatalan dataPembatalan = new pembatalan();
+
+        dataPembatalan.setNoReferensiTiket(001);
+        dataPembatalan.setPengembalianUang(100000.0);
+
+        System.out.println();
+        System.out.println("Data Pembatalan: ");
+        System.out.println(dataPembatalan.toString());
+
+        pembatalan dataPembatalan2 = new pembatalan(002, 10000000.0);
+        cetakPembatalan(dataPembatalan2);
+
+        pembatalan dataPembatalan3 = new pembatalan(003, 900000.0);
+        cetakPembatalan(dataPembatalan3);
+
+        pembatalan dataPembatalan4 = new pembatalan(004, 28000000.0);
+        cetakPembatalan(dataPembatalan4);
+    }
+
+    public static void cetakPembatalan(pembatalan dataPembatalan) {
+        System.out.println("Data Pembatalan");
+        System.out.println("No Referensi Tiket: " + dataPembatalan.getNoReferensiTiket());
+        System.out.println("Pengembalian Uang: " + dataPembatalan.getPengembalianUang());
     }
 }
