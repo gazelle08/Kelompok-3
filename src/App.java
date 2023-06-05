@@ -19,11 +19,11 @@ public class App {
     }
     
     public static void init() {
-        reservasi dataReservasi2 = new reservasi("The Show", "Tiket VIP", 5000000.0, 10, "GBK", "VIP1", "VIP");
+        reservasi dataReservasi2 = new reservasi("BORN PINK WORLD TOUR ASIA", "Tiket VIP", 5000000.0, 10, "GBK", "VIP1", "VIP");
         cetakReservasi(dataReservasi2);
-        reservasi dataReservasi3 = new reservasi("Tulus", "Tiket Reguler", 300000.0, 40, "Venue 1", "R61", "Regular");
+        reservasi dataReservasi3 = new reservasi("STAR LIGHT", "Tiket Reguler", 300000.0, 40, "Venue 1", "R61", "Regular");
         cetakReservasi(dataReservasi2);
-        reservasi dataReservasi4 = new reservasi("Coldplay", "Tiket Reguler", 7000000.0, 45, "GBK", "R33", "Regular");
+        reservasi dataReservasi4 = new reservasi("THE REVE FESTIVAL", "Tiket Reguler", 7000000.0, 45, "GBK", "R33", "Regular");
         cetakReservasi(dataReservasi2);
     }
     
@@ -32,7 +32,7 @@ public class App {
         System.out.println("Daftar Konser: " + dataReservasi.getDaftarKonser());
         System.out.println("Harga Tiket: " + dataReservasi.getHargaTiket());
     }
-}
+}   
     
         
 
