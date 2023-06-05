@@ -28,6 +28,15 @@ public class reservasi {
  * Menghitung Harga: Menghitung harga total tiket berdasarkan jenis tiket, jumlah tiket, dan tempat duduk yang dipilih.
  */
 
+    
+ String daftarKonser;
+ String jenisTiket;
+ double hargaTiket;
+ Integer jumlahTiketTersedia;
+ String TempatKonser;
+ String daftarTempatDuduk;
+ String tipeTempatDuduk;
+ 
     public String getDaftarKonser() {
         return this.daftarKonser;
     }
@@ -83,14 +92,6 @@ public class reservasi {
     public void setTipeTempatDuduk(String tipeTempatDuduk) {
         this.tipeTempatDuduk = tipeTempatDuduk;
     }
-
-    String daftarKonser;
-    String jenisTiket;
-    double hargaTiket;
-    Integer jumlahTiketTersedia;
-    String TempatKonser;
-    String daftarTempatDuduk;
-    String tipeTempatDuduk;
 
 }
 
