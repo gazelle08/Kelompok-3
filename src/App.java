@@ -22,9 +22,9 @@ public class App {
         reservasi dataReservasi2 = new reservasi("BORN PINK WORLD TOUR ASIA", "Tiket VIP", 5000000.0, 10, "GBK", "VIP1", "VIP");
         cetakReservasi(dataReservasi2);
         reservasi dataReservasi3 = new reservasi("STAR LIGHT", "Tiket Reguler", 300000.0, 40, "Venue 1", "R61", "Regular");
-        cetakReservasi(dataReservasi2);
+        cetakReservasi(dataReservasi3);
         reservasi dataReservasi4 = new reservasi("THE REVE FESTIVAL", "Tiket Reguler", 7000000.0, 45, "GBK", "R33", "Regular");
-        cetakReservasi(dataReservasi2);
+        cetakReservasi(dataReservasi4);
     }
     
     public static void cetakReservasi(reservasi dataReservasi) {
