@@ -76,6 +76,31 @@ double totalPembayaran;
     public void setTotalPembayaran(double totalPembayaran) {
         this.totalPembayaran = totalPembayaran;
     }
+
+    public pembayaran() {
+    }
+
+    public pembayaran(String metodePembayaran, int noKartuKredit, int jumlahTiket, String jenisTiket, double harga, double totalPembayaran) {
+        this.metodePembayaran = metodePembayaran;
+        this.noKartuKredit = noKartuKredit;
+        this.jumlahTiket = jumlahTiket;
+        this.jenisTiket = jenisTiket;
+        this.harga = harga;
+        this.totalPembayaran = totalPembayaran;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " metodePembayaran='" + getMetodePembayaran() + "'" +
+            ", noKartuKredit='" + getNoKartuKredit() + "'" +
+            ", jumlahTiket='" + getJumlahTiket() + "'" +
+            ", jenisTiket='" + getJenisTiket() + "'" +
+            ", harga='" + getHarga() + "'" +
+            ", totalPembayaran='" + getTotalPembayaran() + "'" +
+            "}";
+    }
+
 }
 
 

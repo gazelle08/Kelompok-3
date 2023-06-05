@@ -32,4 +32,21 @@ double pengembalianUang;
     public void setPengembalianUang(double pengembalianUang) {
         this.pengembalianUang = pengembalianUang;
     }
+
+    public pembatalan() {
+    }
+
+    public pembatalan(int noReferensiTiket, double pengembalianUang) {
+        this.noReferensiTiket = noReferensiTiket;
+        this.pengembalianUang = pengembalianUang;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " noReferensiTiket='" + getNoReferensiTiket() + "'" +
+            ", pengembalianUang='" + getPengembalianUang() + "'" +
+            "}";
+    }
+
 }

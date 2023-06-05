@@ -33,4 +33,22 @@ String namaArtis;
     public void setNamaArtis(String namaArtis) {
         this.namaArtis = namaArtis;
     }
+
+
+    public jadwalkonser() {
+    }
+
+    public jadwalkonser(String namaKonser, String namaArtis) {
+        this.namaKonser = namaKonser;
+        this.namaArtis = namaArtis;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " namaKonser='" + getNamaKonser() + "'" +
+            ", namaArtis='" + getNamaArtis() + "'" +
+            "}";
+    }
+
 }
