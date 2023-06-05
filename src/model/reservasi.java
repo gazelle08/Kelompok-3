@@ -93,6 +93,33 @@ public class reservasi {
         this.tipeTempatDuduk = tipeTempatDuduk;
     }
 
+
+    public reservasi() {
+    }
+
+    public reservasi(String daftarKonser, String jenisTiket, double hargaTiket, Integer jumlahTiketTersedia, String TempatKonser, String daftarTempatDuduk, String tipeTempatDuduk) {
+        this.daftarKonser = daftarKonser;
+        this.jenisTiket = jenisTiket;
+        this.hargaTiket = hargaTiket;
+        this.jumlahTiketTersedia = jumlahTiketTersedia;
+        this.TempatKonser = TempatKonser;
+        this.daftarTempatDuduk = daftarTempatDuduk;
+        this.tipeTempatDuduk = tipeTempatDuduk;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " daftarKonser='" + getDaftarKonser() + "'" +
+            ", jenisTiket='" + getJenisTiket() + "'" +
+            ", hargaTiket='" + getHargaTiket() + "'" +
+            ", jumlahTiketTersedia='" + getJumlahTiketTersedia() + "'" +
+            ", TempatKonser='" + getTempatKonser() + "'" +
+            ", daftarTempatDuduk='" + getDaftarTempatDuduk() + "'" +
+            ", tipeTempatDuduk='" + getTipeTempatDuduk() + "'" +
+            "}";
+    }
+
 }
 
 
