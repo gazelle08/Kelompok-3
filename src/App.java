@@ -120,11 +120,11 @@ public static reservasi inputDataReservasi() {
     String jenisTiket = scanner.nextLine();
 
     // Mengambil atribut lainnya dari data yang telah diinisialisasi sebelumnya
-    double hargaTiket = 0.0;
-    int jumlahTiketTersedia = 0;
-    String tempatKonser = "";
-    String daftarTempatDuduk = "";
-    String tipeTempatDuduk = "";
+    double hargaTiket = 500000;
+    int jumlahTiketTersedia = 45;
+    String tempatKonser = "GBK";
+    String daftarTempatDuduk = "VIP1";
+    String tipeTempatDuduk = "VIP";
 
     // Memeriksa data reservasi yang cocok berdasarkan nama konser dan jenis tiket
     if (daftarKonser.equalsIgnoreCase("Konser A") && jenisTiket.equalsIgnoreCase("Tiket Reguler")) {
