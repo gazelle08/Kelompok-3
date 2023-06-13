@@ -2,6 +2,7 @@ import model.jadwalkonser;
 import model.pembatalan;
 import model.pembayaran;
 import model.reservasi;
+import model.tiket;
 
 public class App {
     public static void main(String[] args) {
@@ -13,8 +14,9 @@ public class App {
         initReservasi();
         initPembayaran();
         initPembatalan();
+        initTiket();
     }
-
+//init data jadwal konser
     public static void initJadwalKonser() {
         jadwalkonser konser1 = new jadwalkonser("STAR LIGHT", "ASTRO");
         jadwalkonser konser2 = new jadwalkonser("THE REVE FESTIVAL", "RED VELVET");
@@ -28,7 +30,7 @@ public class App {
         System.out.println("3. Nama Konser: " + konser3.getNamaKonser());
         System.out.println("   Nama Artis: " + konser3.getNamaArtis());
     }
-
+//init data reservasi
     public static void initReservasi() {
         reservasi dataReservasi1 = new reservasi();
 
@@ -59,7 +61,7 @@ public class App {
         System.out.println("Daftar Konser: " + dataReservasi.getDaftarKonser());
         System.out.println("Harga Tiket: " + dataReservasi.getHargaTiket());
     }
-
+//init data pembayaran
     public static void initPembayaran() {
         pembayaran dataPembayaran = new pembayaran();
 
@@ -89,7 +91,7 @@ public class App {
         System.out.println("Jenis Tiket: " + dataPembayaran.getJenisTiket());
         System.out.println("Total Pembayaran: " + dataPembayaran.getTotalPembayaran());
     }
-
+//init data pembatalan
     public static void initPembatalan() {
     pembatalan dataPembatalan = new pembatalan();
 
@@ -115,4 +117,29 @@ public static void cetakPembatalan(pembatalan dataPembatalan) {
     System.out.println("No Referensi Tiket: " + dataPembatalan.getNoReferensiTiket());
     System.out.println("Pengembalian Uang: " + dataPembatalan.getPengembalianUang());
 }
+//init tiket
+public static void initTiket() {
+    tiket dataTiket1 = new tiket();
+    dataTiket1.setDaftarKonser("BORN PINK TOUR IN ASIA");
+    dataTiket1.setJenisTiket("Tiket VIP");
+    dataTiket1.setHarga(5000000.0);
+    dataTiket1.setTempatKonser("GBK");
+    dataTiket1.setTipeTempatDuduk("VIP");
+
+    tiket dataTiket2 = new tiket("STAR LIGHT", "Tiket Reguler", 300000.0, "Venue 1", "Regular");
+
+    tiket dataTiket3 = new tiket();
+    dataTiket3.setDaftarKonser("THE REVE FESTIVAL");
+    dataTiket3.setJenisTiket("Tiket Reguler");
+    dataTiket3.setHarga(7000000.0);
+    dataTiket3.setTempatKonser("GBK");
+    dataTiket3.setTipeTempatDuduk("Regular");
+
+    System.out.println();
+    System.out.println("Data Tiket:");
+    System.out.println(dataTiket1.toString());
+    System.out.println(dataTiket2.toString());
+    System.out.println(dataTiket3.toString());
+}
+
 }
