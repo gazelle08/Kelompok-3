@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class App {
     private static Scanner scanner = new Scanner(System.in);
+    private static Object dataPembayaran;
     public static void main(String[] args) {
         init();
     }
@@ -69,7 +70,10 @@ public class App {
         } while (choice != 0);
     }
 
-//init data jadwal konser
+private static void inputDaPaembayaran() {
+    }
+
+    //init data jadwal konser
     public static void initJadwalKonser() {
         jadwalkonser konser1 = new jadwalkonser("STAR LIGHT", "ASTRO");
         jadwalkonser konser2 = new jadwalkonser("THE REVE FESTIVAL", "RED VELVET");
@@ -137,33 +141,6 @@ public static reservasi inputDataReservasi() {
     String daftarTempatDuduk = "VIP1";
     String tipeTempatDuduk = "VIP";
 
-    // Memeriksa data reservasi yang cocok berdasarkan nama konser dan jenis tiket
-    if (daftarKonser.equalsIgnoreCase("Konser A") && jenisTiket.equalsIgnoreCase("Tiket Reguler")) {
-        hargaTiket = 100000.0;
-        jumlahTiketTersedia = 100;
-        tempatKonser = "Venue X";
-        daftarTempatDuduk = "A1, A2, A3, B1, B2, B3";
-        tipeTempatDuduk = "VIP";
-    } else if (daftarKonser.equalsIgnoreCase("BORN PINK WORLD TOUR ASIA") && jenisTiket.equalsIgnoreCase("Tiket VIP")) {
-        hargaTiket = 5000000.0;
-        jumlahTiketTersedia = 10;
-        tempatKonser = "GBK";
-        daftarTempatDuduk = "VIP1";
-        tipeTempatDuduk = "VIP";
-    } else if (daftarKonser.equalsIgnoreCase("STAR LIGHT") && jenisTiket.equalsIgnoreCase("Tiket Reguler")) {
-        hargaTiket = 300000.0;
-        jumlahTiketTersedia = 40;
-        tempatKonser = "Venue 1";
-        daftarTempatDuduk = "R61";
-        tipeTempatDuduk = "Regular";
-    } else if (daftarKonser.equalsIgnoreCase("THE REVE FESTIVAL") && jenisTiket.equalsIgnoreCase("Tiket Reguler")) {
-        hargaTiket = 7000000.0;
-        jumlahTiketTersedia = 45;
-        tempatKonser = "GBK";
-        daftarTempatDuduk = "R33";
-        tipeTempatDuduk = "Regular";
-    }
-
     // Inisialisasi objek reservasi dengan nilai yang diberikan oleh pengguna
     reservasi dataReservasi = new reservasi(daftarKonser, jenisTiket, hargaTiket, jumlahTiketTersedia, tempatKonser, daftarTempatDuduk, tipeTempatDuduk);
 
@@ -175,17 +152,17 @@ public static reservasi inputDataReservasi() {
 //init data pembayaran
     public static void initPembayaran() {
     // Inisialisasi data pembayaran yang sudah ada sebelumnya
-    pembayaran dataPembayaran1 = new pembayaran("Kartu Kredit", 44443333, 1, "Tiket Reguler", 100000.0, 100000.0);
+    pembayaran dataPembayaran = new pembayaran("Kartu Kredit", 44443333, 1, "Tiket Reguler", 100000.0, 100000.0);
+    cetakPembayaran(dataPembayaran);
+
+    pembayaran dataPembayaran1 = new pembayaran("Visa", 11223344, 2, "Tiket VIP", 5000000.0, 10000000.0);
     cetakPembayaran(dataPembayaran1);
 
-    pembayaran dataPembayaran2 = new pembayaran("Visa", 11223344, 2, "Tiket VIP", 5000000.0, 10000000.0);
+    pembayaran dataPembayaran2 = new pembayaran("Mastercard", 99887766, 3, "Tiket Reguler", 300000.0, 900000.0);
     cetakPembayaran(dataPembayaran2);
 
-    pembayaran dataPembayaran3 = new pembayaran("Mastercard", 99887766, 3, "Tiket Reguler", 300000.0, 900000.0);
+    pembayaran dataPembayaran3 = new pembayaran("American Express", 66226633, 4, "Tiket Reguler", 7000000.0, 28000000.0);
     cetakPembayaran(dataPembayaran3);
-
-    pembayaran dataPembayaran4 = new pembayaran("American Express", 66226633, 4, "Tiket Reguler", 7000000.0, 28000000.0);
-    cetakPembayaran(dataPembayaran4);
     }
     private static void cetakPembayaran(pembayaran dataPembayaran1) {
     }
@@ -210,6 +187,7 @@ public static pembayaran inputPembayaran() {
 
         pembayaran pembayaran = new pembayaran(metodePembayaran, noKartuKredit, jumlahTiket, jenisTiket, 0.0, 0.0);
         return pembayaran;
+    
     }
 
 //init data pembatalan
