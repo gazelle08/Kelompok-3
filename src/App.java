@@ -4,7 +4,11 @@ import model.pembayaran;
 import model.reservasi;
 import model.tiket;
 
+import java.time.LocalDate;
+import java.util.Scanner;
+
 public class App {
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         init();
     }
@@ -15,7 +19,45 @@ public class App {
         initPembayaran();
         initPembatalan();
         initTiket();
+        int choice;
+        do {
+            System.out.println("Menu:");
+            System.out.println("1. Jadwal Konser");
+            System.out.println("2. Reservasi");
+            System.out.println("3. Pembayaran");
+            System.out.println("4. Pembatalan");
+            System.out.println("5. Tiket");
+            System.out.println("0. Keluar");
+            System.out.print("Pilihan Anda: ");
+            choice = scanner.nextInt();
+            scanner.nextLine(); // Membersihkan karakter newline
+
+            switch (choice) {
+                case 1:
+                    initJadwalKonser();
+                    break;
+                case 2:
+                    initReservasi();
+                    break;
+                case 3:
+                    initPembayaran();
+                    break;
+                case 4:
+                    initPembatalan();
+                    break;
+                case 5:
+                    initTiket();
+                    break;
+                case 0:
+                    System.out.println("Terima kasih. Program selesai.");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid.");
+            }
+            System.out.println();
+        } while (choice != 0);
     }
+
 //init data jadwal konser
     public static void initJadwalKonser() {
         jadwalkonser konser1 = new jadwalkonser("STAR LIGHT", "ASTRO");
@@ -55,12 +97,70 @@ public class App {
         reservasi dataReservasi4 = new reservasi("THE REVE FESTIVAL", "Tiket Reguler", 7000000.0, 45, "GBK", "R33", "Regular");
         cetakReservasi(dataReservasi4);
     }
-
+    //input reservasi
     public static void cetakReservasi(reservasi dataReservasi) {
-        System.out.println("Data Reservasi:");
-        System.out.println("Daftar Konser: " + dataReservasi.getDaftarKonser());
-        System.out.println("Harga Tiket: " + dataReservasi.getHargaTiket());
+    System.out.println("Data Reservasi:");
+    System.out.println("Daftar Konser: " + dataReservasi.getDaftarKonser());
+    System.out.println("Jenis Tiket: " + dataReservasi.getJenisTiket());
+    System.out.println("Harga Tiket: " + dataReservasi.getHargaTiket());
+    System.out.println("Jumlah Tiket Tersedia: " + dataReservasi.getJumlahTiketTersedia());
+    System.out.println("Tempat Konser: " + dataReservasi.getTempatKonser());
+    System.out.println("Daftar Tempat Duduk: " + dataReservasi.getDaftarTempatDuduk());
+    System.out.println("Tipe Tempat Duduk: " + dataReservasi.getTipeTempatDuduk());
+}
+
+// Masukkan input dari pengguna untuk Reservasi
+public static reservasi inputDataReservasi() {
+    System.out.println("Reservasi");
+
+    System.out.print("Masukkan nama konser yang ingin kamu ikuti: ");
+    String daftarKonser = scanner.nextLine();
+
+    System.out.print("Masukkan Jenis Tiket: ");
+    String jenisTiket = scanner.nextLine();
+
+    // Mengambil atribut lainnya dari data yang telah diinisialisasi sebelumnya
+    double hargaTiket = 0.0;
+    int jumlahTiketTersedia = 0;
+    String tempatKonser = "";
+    String daftarTempatDuduk = "";
+    String tipeTempatDuduk = "";
+
+    // Memeriksa data reservasi yang cocok berdasarkan nama konser dan jenis tiket
+    if (daftarKonser.equalsIgnoreCase("Konser A") && jenisTiket.equalsIgnoreCase("Tiket Reguler")) {
+        hargaTiket = 100000.0;
+        jumlahTiketTersedia = 100;
+        tempatKonser = "Venue X";
+        daftarTempatDuduk = "A1, A2, A3, B1, B2, B3";
+        tipeTempatDuduk = "VIP";
+    } else if (daftarKonser.equalsIgnoreCase("BORN PINK WORLD TOUR ASIA") && jenisTiket.equalsIgnoreCase("Tiket VIP")) {
+        hargaTiket = 5000000.0;
+        jumlahTiketTersedia = 10;
+        tempatKonser = "GBK";
+        daftarTempatDuduk = "VIP1";
+        tipeTempatDuduk = "VIP";
+    } else if (daftarKonser.equalsIgnoreCase("STAR LIGHT") && jenisTiket.equalsIgnoreCase("Tiket Reguler")) {
+        hargaTiket = 300000.0;
+        jumlahTiketTersedia = 40;
+        tempatKonser = "Venue 1";
+        daftarTempatDuduk = "R61";
+        tipeTempatDuduk = "Regular";
+    } else if (daftarKonser.equalsIgnoreCase("THE REVE FESTIVAL") && jenisTiket.equalsIgnoreCase("Tiket Reguler")) {
+        hargaTiket = 7000000.0;
+        jumlahTiketTersedia = 45;
+        tempatKonser = "GBK";
+        daftarTempatDuduk = "R33";
+        tipeTempatDuduk = "Regular";
     }
+
+    // Inisialisasi objek reservasi dengan nilai yang diberikan oleh pengguna
+    reservasi dataReservasi = new reservasi(daftarKonser, jenisTiket, hargaTiket, jumlahTiketTersedia, tempatKonser, daftarTempatDuduk, tipeTempatDuduk);
+
+    System.out.println("Data Reservasi:");
+    System.out.println(dataReservasi.toString());
+
+    return dataReservasi;
+}
 //init data pembayaran
     public static void initPembayaran() {
         pembayaran dataPembayaran = new pembayaran();
@@ -91,54 +191,68 @@ public class App {
         System.out.println("Jenis Tiket: " + dataPembayaran.getJenisTiket());
         System.out.println("Total Pembayaran: " + dataPembayaran.getTotalPembayaran());
     }
+
 //init data pembatalan
-    public static void initPembatalan() {
-    pembatalan dataPembatalan = new pembatalan();
+        public static void initPembatalan() {
+        pembatalan dataPembatalan = new pembatalan();
 
-    dataPembatalan.setNoReferensiTiket(1);
-    dataPembatalan.setPengembalianUang(100000.0);
+        dataPembatalan.setNoReferensiTiket(1);
+        dataPembatalan.setPengembalianUang(100000.0);
 
-    System.out.println();
-    System.out.println("Data Pembatalan: ");
-    System.out.println(dataPembatalan.toString());
+        System.out.println("Data Pembatalan:");
+        System.out.println(dataPembatalan.toString());
 
-    pembatalan dataPembatalan2 = new pembatalan(2, 10000000.0);
-    cetakPembatalan(dataPembatalan2);
+        pembatalan dataPembatalan2 = new pembatalan(2, 10000000.0);
+        cetakPembatalan(dataPembatalan2);
 
-    pembatalan dataPembatalan3 = new pembatalan(3, 900000.0);
-    cetakPembatalan(dataPembatalan3);
+        pembatalan dataPembatalan3 = new pembatalan(3, 900000.0);
+        cetakPembatalan(dataPembatalan3);
 
-    pembatalan dataPembatalan4 = new pembatalan(4, 28000000.0);
-    cetakPembatalan(dataPembatalan4);
-}
+        pembatalan dataPembatalan4 = new pembatalan(4, 28000000.0);
+        cetakPembatalan(dataPembatalan4);
+    }
 
-public static void cetakPembatalan(pembatalan dataPembatalan) {
-    System.out.println("Data Pembatalan");
-    System.out.println("No Referensi Tiket: " + dataPembatalan.getNoReferensiTiket());
-    System.out.println("Pengembalian Uang: " + dataPembatalan.getPengembalianUang());
-}
-//init tiket
+    public static void cetakPembatalan(pembatalan dataPembatalan) {
+        System.out.println("Data Pembatalan");
+        System.out.println("No Referensi Tiket: " + dataPembatalan.getNoReferensiTiket());
+        System.out.println("Pengembalian Uang: " + dataPembatalan.getPengembalianUang());
+    }
+//input data pembatalan
+    public static void inputPembatalan() {
+        System.out.println("Pembatalan");
+
+        System.out.print("Masukkan Alasan Pembatalan: ");
+        String alasanPembatalan = scanner.nextLine();
+
+        // Nomor referensi tiket diatur secara otomatis
+        int noReferensiTiket = 5; // Update the appropriate value
+
+        // Tanggal pembatalan diatur secara otomatis
+        LocalDate tanggalPembatalan = LocalDate.now();
+
+        pembatalan dataPembatalan = new pembatalan(noReferensiTiket, alasanPembatalan);
+        
+        System.out.println("Data Pembatalan:");
+        System.out.println(dataPembatalan.toString());
+    }
+
 public static void initTiket() {
-    tiket dataTiket1 = new tiket();
-    dataTiket1.setDaftarKonser("BORN PINK TOUR IN ASIA");
-    dataTiket1.setJenisTiket("Tiket VIP");
-    dataTiket1.setHarga(5000000.0);
-    dataTiket1.setTempatKonser("GBK");
-    dataTiket1.setTipeTempatDuduk("VIP");
+    int nomorReservasi = 23912;
+    String namaKonser = "BORN PINK TOUR IN ASIA";
+    String jenisTiket = "Tiket VIP";
+    double hargaTiket = 5000000.0;
+    String tempatKonser = "GBK";
+    String tipeTiket = "VIP";
 
-    System.out.println();
-    System.out.println("Data Tiket 1:");
-    System.out.println(dataTiket1.toString());
+    tiket dataTiket = new tiket();
+    dataTiket.setNoPemesanan(nomorReservasi);
+    dataTiket.setDaftarKonser(namaKonser);
+    dataTiket.setJenisTiket(tipeTiket);
+    dataTiket.setHarga(hargaTiket);
+    dataTiket.setTempatKonser(tempatKonser);
+    dataTiket.setTipeTempatDuduk(tipeTiket);
 
-    tiket dataTiket2 = new tiket();
-    dataTiket2.setDaftarKonser("THE REVE FESTIVAL");
-    dataTiket2.setJenisTiket("Tiket Reguler");
-    dataTiket2.setHarga(7000000.0);
-    dataTiket2.setTempatKonser("GBK");
-    dataTiket2.setTipeTempatDuduk("Regular");
-
-    System.out.println();
-    System.out.println("Data Tiket 2:");
-    System.out.println(dataTiket2.toString());
+    System.out.println("Data Tiket:");
+    System.out.println(dataTiket.toString());
 }
-}
+    }

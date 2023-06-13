@@ -41,6 +41,9 @@ double pengembalianUang;
         this.pengembalianUang = pengembalianUang;
     }
 
+    public pembatalan(int noReferensiTiket2, String alasanPembatalan) {
+    }
+
     @Override
     public String toString() {
         return "{" +

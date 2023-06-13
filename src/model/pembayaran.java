@@ -89,6 +89,9 @@ double totalPembayaran;
         this.totalPembayaran = totalPembayaran;
     }
 
+    public pembayaran(String metodePembayaran2, double nominalPembayaran, String tanggalPembayaran) {
+    }
+
     @Override
     public String toString() {
         return "{" +

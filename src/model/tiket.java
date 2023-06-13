@@ -91,4 +91,7 @@ String tipeTempatDuduk;
             "}";
     }
 
+    public void setNoPemesanan(int nomorReservasi) {
+    }
+
 }
