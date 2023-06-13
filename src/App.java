@@ -126,20 +126,19 @@ public static void initTiket() {
     dataTiket1.setTempatKonser("GBK");
     dataTiket1.setTipeTempatDuduk("VIP");
 
-    tiket dataTiket2 = new tiket("STAR LIGHT", "Tiket Reguler", 300000.0, "Venue 1", "Regular");
+    System.out.println();
+    System.out.println("Data Tiket 1:");
+    System.out.println(dataTiket1.toString());
 
-    tiket dataTiket3 = new tiket();
-    dataTiket3.setDaftarKonser("THE REVE FESTIVAL");
-    dataTiket3.setJenisTiket("Tiket Reguler");
-    dataTiket3.setHarga(7000000.0);
-    dataTiket3.setTempatKonser("GBK");
-    dataTiket3.setTipeTempatDuduk("Regular");
+    tiket dataTiket2 = new tiket();
+    dataTiket2.setDaftarKonser("THE REVE FESTIVAL");
+    dataTiket2.setJenisTiket("Tiket Reguler");
+    dataTiket2.setHarga(7000000.0);
+    dataTiket2.setTempatKonser("GBK");
+    dataTiket2.setTipeTempatDuduk("Regular");
 
     System.out.println();
-    System.out.println("Data Tiket:");
-    System.out.println(dataTiket1.toString());
+    System.out.println("Data Tiket 2:");
     System.out.println(dataTiket2.toString());
-    System.out.println(dataTiket3.toString());
 }
-
 }
