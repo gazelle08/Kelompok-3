@@ -23,14 +23,17 @@ public class App {
         do {
             System.out.println("Menu:");
             System.out.println("1. Jadwal Konser");
-            System.out.println("2. Reservasi");
-            System.out.println("3. Pembayaran");
-            System.out.println("4. Pembatalan");
-            System.out.println("5. Tiket");
+            System.out.println("2. Input Reservasi");
+            System.out.println("3. Data Reservasi");
+            System.out.println("4. Input Pembayaran");
+            System.out.println("5. Data Pembayaran");
+            System.out.println("6. Input Pembatalan");
+            System.out.println("7. Data Pembatalan");
+            System.out.println("8. Tiket");
             System.out.println("0. Keluar");
             System.out.print("Pilihan Anda: ");
             choice = scanner.nextInt();
-            scanner.nextLine(); // Membersihkan karakter newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -38,14 +41,22 @@ public class App {
                     break;
                 case 2:
                     inputDataReservasi();
-                    break;
                 case 3:
-                    inputPembayaran();
+                    initReservasi();
                     break;
                 case 4:
-                    inputPembatalan();
+                    inputPembayaran();
                     break;
                 case 5:
+                    initPembayaran();
+                    break;
+                case 6:
+                    inputPembatalan();
+                    break;
+                case 7:
+                    initPembatalan();
+                    break;
+                case 8:
                     initTiket();
                     break;
                 case 0:
@@ -176,32 +187,30 @@ public static reservasi inputDataReservasi() {
     pembayaran dataPembayaran4 = new pembayaran("American Express", 66226633, 4, "Tiket Reguler", 7000000.0, 28000000.0);
     cetakPembayaran(dataPembayaran4);
     }
-    // Input pembayaran
-public static void inputPembayaran() {
-    System.out.println("Pembayaran");
+    private static void cetakPembayaran(pembayaran dataPembayaran1) {
+    }
 
-    System.out.print("Masukkan Metode Pembayaran: ");
-    String metodePembayaran = scanner.nextLine();
+// Input pembayaran
+public static pembayaran inputPembayaran() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Pembayaran");
 
-    System.out.print("Masukkan Nominal Pembayaran: ");
-    double nominalPembayaran = scanner.nextDouble();
-    scanner.nextLine(); // Membersihkan karakter newline
+        System.out.print("Masukkan Metode Pembayaran: ");
+        String metodePembayaran = scanner.nextLine();
 
-    // // Tanggal pembayaran diatur secara otomatis
-    LocalDate tanggalPembayaran = LocalDate.now();
+        System.out.print("Masukkan Nomor Kartu Kredit: ");
+        int noKartuKredit = scanner.nextInt();
 
-    pembayaran dataPembayaran = new pembayaran(metodePembayaran, nominalPembayaran);
+        System.out.print("Masukkan Jumlah Tiket: ");
+        int jumlahTiket = scanner.nextInt();
+        scanner.nextLine();
 
-    System.out.println("Data Pembayaran:");
-    System.out.println(dataPembayaran.toString());
-}
+        System.out.print("Masukkan Jenis Tiket: ");
+        String jenisTiket = scanner.nextLine();
 
-public static void cetakPembayaran(pembayaran dataPembayaran) {
-    System.out.println("Data Pembayaran");
-    System.out.println("Jenis Tiket: " + dataPembayaran.getJenisTiket());
-    System.out.println("Total Pembayaran: " + dataPembayaran.getTotalPembayaran());
-}
-
+        pembayaran pembayaran = new pembayaran(metodePembayaran, noKartuKredit, jumlahTiket, jenisTiket, 0.0, 0.0);
+        return pembayaran;
+    }
 
 //init data pembatalan
         public static void initPembatalan() {
