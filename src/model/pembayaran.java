@@ -92,6 +92,9 @@ double totalPembayaran;
     public pembayaran(String metodePembayaran2, double nominalPembayaran, String tanggalPembayaran) {
     }
 
+    public pembayaran(String metodePembayaran2, double nominalPembayaran) {
+    }
+
     @Override
     public String toString() {
         return "{" +
