@@ -4,7 +4,11 @@ import model.pembayaran;
 import model.reservasi;
 import model.tiket;
 
+import java.time.LocalDate;
+import java.util.Scanner;
+
 public class App {
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         init();
     }
@@ -15,7 +19,45 @@ public class App {
         initPembayaran();
         initPembatalan();
         initTiket();
+        int choice;
+        do {
+            System.out.println("Menu:");
+            System.out.println("1. Jadwal Konser");
+            System.out.println("2. Reservasi");
+            System.out.println("3. Pembayaran");
+            System.out.println("4. Pembatalan");
+            System.out.println("5. Tiket");
+            System.out.println("0. Keluar");
+            System.out.print("Pilihan Anda: ");
+            choice = scanner.nextInt();
+            scanner.nextLine(); // Membersihkan karakter newline
+
+            switch (choice) {
+                case 1:
+                    initJadwalKonser();
+                    break;
+                case 2:
+                    initReservasi();
+                    break;
+                case 3:
+                    initPembayaran();
+                    break;
+                case 4:
+                    initPembatalan();
+                    break;
+                case 5:
+                    initTiket();
+                    break;
+                case 0:
+                    System.out.println("Terima kasih. Program selesai.");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid.");
+            }
+            System.out.println();
+        } while (choice != 0);
     }
+
 //init data jadwal konser
     public static void initJadwalKonser() {
         jadwalkonser konser1 = new jadwalkonser("STAR LIGHT", "ASTRO");
@@ -54,7 +96,37 @@ public class App {
 
         reservasi dataReservasi4 = new reservasi("THE REVE FESTIVAL", "Tiket Reguler", 7000000.0, 45, "GBK", "R33", "Regular");
         cetakReservasi(dataReservasi4);
+    //input reservasi
+     System.out.println("Reservasi");
+
+        System.out.print("Masukkan nama konser yang ingin kamu ikuti: ");
+        String daftarKonser = scanner.nextLine();
+
+        System.out.print("Masukkan Jenis Tiket: ");
+        String jenisTiket = scanner.nextLine();
+
+        System.out.print("Masukkan Harga Tiket: ");
+        double hargaTiket = scanner.nextDouble();
+
+        System.out.print("Masukkan Jumlah Tiket Tersedia: ");
+        int jumlahTiketTersedia = scanner.nextInt();
+        scanner.nextLine(); // Membersihkan karakter newline
+
+        System.out.print("Masukkan Tempat Konser: ");
+        String tempatKonser = scanner.nextLine();
+
+        System.out.print("Masukkan Daftar Tempat Duduk: ");
+        String daftarTempatDuduk = scanner.nextLine();
+
+        System.out.print("Masukkan Tipe Tempat Duduk: ");
+        String tipeTempatDuduk = scanner.nextLine();
+
+        reservasi dataReservasi = new reservasi(daftarKonser, jenisTiket, hargaTiket, jumlahTiketTersedia, tempatKonser, daftarTempatDuduk, tipeTempatDuduk);
+
+        System.out.println("Data Reservasi:");
+        System.out.println(dataReservasi.toString());
     }
+
 
     public static void cetakReservasi(reservasi dataReservasi) {
         System.out.println("Data Reservasi:");
@@ -63,34 +135,44 @@ public class App {
     }
 //init data pembayaran
     public static void initPembayaran() {
-        pembayaran dataPembayaran = new pembayaran();
+    // Inisialisasi data pembayaran yang sudah ada sebelumnya
+    pembayaran dataPembayaran1 = new pembayaran("Kartu Kredit", 44443333, 1, "Tiket Reguler", 100000.0, 100000.0);
+    cetakPembayaran(dataPembayaran1);
 
-        dataPembayaran.setMetodePembayaran("Kartu Kredit");
-        dataPembayaran.setNoKartuKredit(44443333);
-        dataPembayaran.setJumlahTiket(1);
-        dataPembayaran.setJenisTiket("Tiket Reguler");
-        dataPembayaran.setHarga(100000.0);
-        dataPembayaran.setTotalPembayaran(100000.0);
+    pembayaran dataPembayaran2 = new pembayaran("Visa", 11223344, 2, "Tiket VIP", 5000000.0, 10000000.0);
+    cetakPembayaran(dataPembayaran2);
 
-        System.out.println();
-        System.out.println("Data Pembayaran: ");
-        System.out.println(dataPembayaran.toString());
+    pembayaran dataPembayaran3 = new pembayaran("Mastercard", 99887766, 3, "Tiket Reguler", 300000.0, 900000.0);
+    cetakPembayaran(dataPembayaran3);
 
-        pembayaran dataPembayaran2 = new pembayaran("Visa", 11223344, 2, "Tiket VIP", 5000000.0, 10000000.0);
-        cetakPembayaran(dataPembayaran2);
+    pembayaran dataPembayaran4 = new pembayaran("American Express", 66226633, 4, "Tiket Reguler", 7000000.0, 28000000.0);
+    cetakPembayaran(dataPembayaran4);
 
-        pembayaran dataPembayaran3 = new pembayaran("Mastercard", 99887766, 3, "Tiket Reguler", 300000.0, 900000.0);
-        cetakPembayaran(dataPembayaran3);
+    // Input pembayaran
+    System.out.println("Pembayaran");
 
-        pembayaran dataPembayaran4 = new pembayaran("American Express", 66226633, 4, "Tiket Reguler", 7000000.0, 28000000.0);
-        cetakPembayaran(dataPembayaran4);
-    }
+    System.out.print("Masukkan Metode Pembayaran: ");
+    String metodePembayaran = scanner.nextLine();
 
-    public static void cetakPembayaran(pembayaran dataPembayaran) {
-        System.out.println("Data Pembayaran");
-        System.out.println("Jenis Tiket: " + dataPembayaran.getJenisTiket());
-        System.out.println("Total Pembayaran: " + dataPembayaran.getTotalPembayaran());
-    }
+    System.out.print("Masukkan Nominal Pembayaran: ");
+    double nominalPembayaran = scanner.nextDouble();
+    scanner.nextLine(); // Membersihkan karakter newline
+
+    // Tanggal pembayaran diatur secara otomatis
+    LocalDate tanggalPembayaran = LocalDate.now();
+
+    pembayaran dataPembayaran = new pembayaran(metodePembayaran, nominalPembayaran, tanggalPembayaran);
+
+    System.out.println("Data Pembayaran:");
+    System.out.println(dataPembayaran.toString());
+}
+
+public static void cetakPembayaran(pembayaran dataPembayaran) {
+    System.out.println("Data Pembayaran");
+    System.out.println("Jenis Tiket: " + dataPembayaran.getJenisTiket());
+    System.out.println("Total Pembayaran: " + dataPembayaran.getTotalPembayaran());
+}
+
 //init data pembatalan
     public static void initPembatalan() {
     pembatalan dataPembatalan = new pembatalan();
@@ -116,7 +198,19 @@ public static void cetakPembatalan(pembatalan dataPembatalan) {
     System.out.println("Data Pembatalan");
     System.out.println("No Referensi Tiket: " + dataPembatalan.getNoReferensiTiket());
     System.out.println("Pengembalian Uang: " + dataPembatalan.getPengembalianUang());
-}
+//input pembatalan
+        System.out.println(" Pembatalan");
+
+        System.out.print("Masukkan Alasan Pembatalan: ");
+        String alasanPembatalan = scanner.nextLine();
+
+        System.out.print("Masukkan Tanggal Pembatalan: ");
+        String tanggalPembatalan = scanner.nextLine();
+
+        System.out.println("Data Pembatalan:");
+        System.out.println(dataPembatalan.toString());
+    }
+
 //init tiket
 public static void initTiket() {
     tiket dataTiket1 = new tiket();
@@ -126,20 +220,19 @@ public static void initTiket() {
     dataTiket1.setTempatKonser("GBK");
     dataTiket1.setTipeTempatDuduk("VIP");
 
-    tiket dataTiket2 = new tiket("STAR LIGHT", "Tiket Reguler", 300000.0, "Venue 1", "Regular");
+    System.out.println();
+    System.out.println("Data Tiket 1:");
+    System.out.println(dataTiket1.toString());
 
-    tiket dataTiket3 = new tiket();
-    dataTiket3.setDaftarKonser("THE REVE FESTIVAL");
-    dataTiket3.setJenisTiket("Tiket Reguler");
-    dataTiket3.setHarga(7000000.0);
-    dataTiket3.setTempatKonser("GBK");
-    dataTiket3.setTipeTempatDuduk("Regular");
+    tiket dataTiket2 = new tiket();
+    dataTiket2.setDaftarKonser("THE REVE FESTIVAL");
+    dataTiket2.setJenisTiket("Tiket Reguler");
+    dataTiket2.setHarga(7000000.0);
+    dataTiket2.setTempatKonser("GBK");
+    dataTiket2.setTipeTempatDuduk("Regular");
 
     System.out.println();
-    System.out.println("Data Tiket:");
-    System.out.println(dataTiket1.toString());
+    System.out.println("Data Tiket 2:");
     System.out.println(dataTiket2.toString());
-    System.out.println(dataTiket3.toString());
 }
-
 }
