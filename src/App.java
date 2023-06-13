@@ -37,13 +37,13 @@ public class App {
                     initJadwalKonser();
                     break;
                 case 2:
-                    initReservasi();
+                    inputDataReservasi();
                     break;
                 case 3:
                     initPembayaran();
                     break;
                 case 4:
-                    initPembatalan();
+                    inputPembatalan();
                     break;
                 case 5:
                     initTiket();
@@ -120,8 +120,8 @@ public static reservasi inputDataReservasi() {
     String jenisTiket = scanner.nextLine();
 
     // Mengambil atribut lainnya dari data yang telah diinisialisasi sebelumnya
-    double hargaTiket = 0.0;
-    int jumlahTiketTersedia = 0;
+    double hargaTiket = 500000;
+    int jumlahTiketTersedia = 45;
     String tempatKonser = "";
     String daftarTempatDuduk = "";
     String tipeTempatDuduk = "";
@@ -225,8 +225,7 @@ public static reservasi inputDataReservasi() {
         String alasanPembatalan = scanner.nextLine();
 
         // Nomor referensi tiket diatur secara otomatis
-        int noReferensiTiket = 5; // Update the appropriate value
-
+        int noReferensiTiket = 5;
         // Tanggal pembatalan diatur secara otomatis
         LocalDate tanggalPembatalan = LocalDate.now();
 
@@ -254,5 +253,6 @@ public static void initTiket() {
 
     System.out.println("Data Tiket:");
     System.out.println(dataTiket.toString());
-}
     }
+
+}
