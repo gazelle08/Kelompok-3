@@ -5,6 +5,10 @@ import model.reservasi;
 
 public class App {
     public static void main(String[] args) {
+        init();
+    }
+
+    public static void init() {
         initJadwalKonser();
         initReservasi();
         initPembayaran();
@@ -27,7 +31,7 @@ public class App {
 
     public static void initReservasi() {
         reservasi dataReservasi1 = new reservasi();
-        
+
         dataReservasi1.setDaftarKonser("Konser A");
         dataReservasi1.setJenisTiket("Tiket Reguler");
         dataReservasi1.setHargaTiket(100000.0);
@@ -35,21 +39,21 @@ public class App {
         dataReservasi1.setTempatKonser("Venue X");
         dataReservasi1.setDaftarTempatDuduk("A1, A2, A3, B1, B2, B3");
         dataReservasi1.setTipeTempatDuduk("VIP");
-        
+
         System.out.println();
         System.out.println("Data Reservasi:");
         System.out.println(dataReservasi1.toString());
 
         reservasi dataReservasi2 = new reservasi("BORN PINK WORLD TOUR ASIA", "Tiket VIP", 5000000.0, 10, "GBK", "VIP1", "VIP");
         cetakReservasi(dataReservasi2);
-        
+
         reservasi dataReservasi3 = new reservasi("STAR LIGHT", "Tiket Reguler", 300000.0, 40, "Venue 1", "R61", "Regular");
         cetakReservasi(dataReservasi3);
-        
+
         reservasi dataReservasi4 = new reservasi("THE REVE FESTIVAL", "Tiket Reguler", 7000000.0, 45, "GBK", "R33", "Regular");
         cetakReservasi(dataReservasi4);
     }
-    
+
     public static void cetakReservasi(reservasi dataReservasi) {
         System.out.println("Data Reservasi:");
         System.out.println("Daftar Konser: " + dataReservasi.getDaftarKonser());
@@ -87,28 +91,28 @@ public class App {
     }
 
     public static void initPembatalan() {
-        pembatalan dataPembatalan = new pembatalan();
+    pembatalan dataPembatalan = new pembatalan();
 
-        dataPembatalan.setNoReferensiTiket(001);
-        dataPembatalan.setPengembalianUang(100000.0);
+    dataPembatalan.setNoReferensiTiket(1);
+    dataPembatalan.setPengembalianUang(100000.0);
 
-        System.out.println();
-        System.out.println("Data Pembatalan: ");
-        System.out.println(dataPembatalan.toString());
+    System.out.println();
+    System.out.println("Data Pembatalan: ");
+    System.out.println(dataPembatalan.toString());
 
-        pembatalan dataPembatalan2 = new pembatalan(002, 10000000.0);
-        cetakPembatalan(dataPembatalan2);
+    pembatalan dataPembatalan2 = new pembatalan(2, 10000000.0);
+    cetakPembatalan(dataPembatalan2);
 
-        pembatalan dataPembatalan3 = new pembatalan(003, 900000.0);
-        cetakPembatalan(dataPembatalan3);
+    pembatalan dataPembatalan3 = new pembatalan(3, 900000.0);
+    cetakPembatalan(dataPembatalan3);
 
-        pembatalan dataPembatalan4 = new pembatalan(004, 28000000.0);
-        cetakPembatalan(dataPembatalan4);
-    }
+    pembatalan dataPembatalan4 = new pembatalan(4, 28000000.0);
+    cetakPembatalan(dataPembatalan4);
+}
 
-    public static void cetakPembatalan(pembatalan dataPembatalan) {
-        System.out.println("Data Pembatalan");
-        System.out.println("No Referensi Tiket: " + dataPembatalan.getNoReferensiTiket());
-        System.out.println("Pengembalian Uang: " + dataPembatalan.getPengembalianUang());
-    }
+public static void cetakPembatalan(pembatalan dataPembatalan) {
+    System.out.println("Data Pembatalan");
+    System.out.println("No Referensi Tiket: " + dataPembatalan.getNoReferensiTiket());
+    System.out.println("Pengembalian Uang: " + dataPembatalan.getPengembalianUang());
+}
 }
