@@ -29,6 +29,17 @@ double harga;
 String tempatKonser;
 String tipeTempatDuduk;
 
+    public tiket(String daftarKonser, String jenisTiket, double harga, String tempatKonser, String tipeTempatDuduk) {
+        this.daftarKonser = daftarKonser;
+        this.jenisTiket = jenisTiket;
+        this.harga = harga;
+        this.tempatKonser = tempatKonser;
+        this.tipeTempatDuduk = tipeTempatDuduk;
+    }
+
+    public tiket() {
+    }
+
     public String getDaftarKonser() {
         return this.daftarKonser;
     }
@@ -68,4 +79,19 @@ String tipeTempatDuduk;
     public void setTipeTempatDuduk(String tipeTempatDuduk) {
         this.tipeTempatDuduk = tipeTempatDuduk;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " daftarKonser='" + getDaftarKonser() + "'" +
+            ", jenisTiket='" + getJenisTiket() + "'" +
+            ", harga='" + getHarga() + "'" +
+            ", tempatKonser='" + getTempatKonser() + "'" +
+            ", tipeTempatDuduk='" + getTipeTempatDuduk() + "'" +
+            "}";
+    }
+
+    public void setNoPemesanan(int nomorReservasi) {
+    }
+
 }
