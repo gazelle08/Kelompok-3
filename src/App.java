@@ -70,7 +70,7 @@ public class App {
         } while (choice != 0);
     }
 
-private static void inputDaPaembayaran() {
+private static void inputDataPembayaran() {
     }
 
     //init data jadwal konser
@@ -91,38 +91,22 @@ private static void inputDaPaembayaran() {
     public static void initReservasi() {
         reservasi dataReservasi1 = new reservasi();
 
-        dataReservasi1.setDaftarKonser("Konser A");
+        dataReservasi1.setDaftarKonser("STAR LIGHT");
         dataReservasi1.setJenisTiket("Tiket Reguler");
-        dataReservasi1.setHargaTiket(100000.0);
-        dataReservasi1.setJumlahTiketTersedia(100);
-        dataReservasi1.setTempatKonser("Venue X");
-        dataReservasi1.setDaftarTempatDuduk("A1, A2, A3, B1, B2, B3");
-        dataReservasi1.setTipeTempatDuduk("VIP");
 
         System.out.println();
         System.out.println("Data Reservasi:");
         System.out.println(dataReservasi1.toString());
 
-        reservasi dataReservasi2 = new reservasi("BORN PINK WORLD TOUR ASIA", "Tiket VIP", 5000000.0, 10, "GBK", "VIP1", "VIP");
-        cetakReservasi(dataReservasi2);
-
-        reservasi dataReservasi3 = new reservasi("STAR LIGHT", "Tiket Reguler", 300000.0, 40, "Venue 1", "R61", "Regular");
-        cetakReservasi(dataReservasi3);
-
-        reservasi dataReservasi4 = new reservasi("THE REVE FESTIVAL", "Tiket Reguler", 7000000.0, 45, "GBK", "R33", "Regular");
-        cetakReservasi(dataReservasi4);
     }
     //input reservasi
     public static void cetakReservasi(reservasi dataReservasi) {
-    System.out.println("Data Reservasi:");
-    System.out.println("Daftar Konser: " + dataReservasi.getDaftarKonser());
-    System.out.println("Jenis Tiket: " + dataReservasi.getJenisTiket());
-    System.out.println("Harga Tiket: " + dataReservasi.getHargaTiket());
-    System.out.println("Jumlah Tiket Tersedia: " + dataReservasi.getJumlahTiketTersedia());
-    System.out.println("Tempat Konser: " + dataReservasi.getTempatKonser());
-    System.out.println("Daftar Tempat Duduk: " + dataReservasi.getDaftarTempatDuduk());
-    System.out.println("Tipe Tempat Duduk: " + dataReservasi.getTipeTempatDuduk());
-}
+    System.out.println("Reservasi Tiket Anda:");
+    System.out.println("Nama: " + dataReservasi.getCostumer());
+    System.out.println("Lihat Daftar Konser: " + dataReservasi.getDaftarKonser());
+    System.out.println("Pilih Jenis Tiket (VIP/Reguler): " + dataReservasi.getJenisTiket());
+    System.out.println("Harga Tiket Anda: " + dataReservasi.getHargaTiket());
+    }
 
 // Masukkan input dari pengguna untuk Reservasi
 public static reservasi inputDataReservasi() {
@@ -140,15 +124,9 @@ public static reservasi inputDataReservasi() {
     String tempatKonser = "GBK";
     String daftarTempatDuduk = "VIP1";
     String tipeTempatDuduk = "VIP";
-
-    // Inisialisasi objek reservasi dengan nilai yang diberikan oleh pengguna
-    reservasi dataReservasi = new reservasi(daftarKonser, jenisTiket, hargaTiket, jumlahTiketTersedia, tempatKonser, daftarTempatDuduk, tipeTempatDuduk);
-
-    System.out.println("Data Reservasi:");
-    System.out.println(dataReservasi.toString());
-
-    return dataReservasi;
 }
+
+
 //init data pembayaran
     public static void initPembayaran() {
     // Inisialisasi data pembayaran yang sudah ada sebelumnya
