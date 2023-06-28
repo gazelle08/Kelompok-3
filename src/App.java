@@ -1,5 +1,4 @@
 import model.jadwalkonser;
-import model.pembatalan;
 import model.pembayaran;
 import model.reservasi;
 import model.tiket;
@@ -18,7 +17,6 @@ public class App {
         initJadwalKonser();
         initReservasi();
         initPembayaran();
-        initPembatalan();
         initTiket();
         int choice;
         do {
@@ -50,12 +48,6 @@ public class App {
                     break;
                 case 5:
                     initPembayaran();
-                    break;
-                case 6:
-                    inputPembatalan();
-                    break;
-                case 7:
-                    initPembatalan();
                     break;
                 case 8:
                     initTiket();
@@ -105,26 +97,8 @@ private static void inputDataPembayaran() {
     System.out.println("Nama: " + dataReservasi.getCostumer());
     System.out.println("Lihat Daftar Konser: " + dataReservasi.getDaftarKonser());
     System.out.println("Pilih Jenis Tiket (VIP/Reguler): " + dataReservasi.getJenisTiket());
-    System.out.println("Harga Tiket Anda: " + dataReservasi.getHargaTiket());
     }
 
-// Masukkan input dari pengguna untuk Reservasi
-public static reservasi inputDataReservasi() {
-    System.out.println("Reservasi");
-
-    System.out.print("Masukkan nama konser yang ingin kamu ikuti: ");
-    String daftarKonser = scanner.nextLine();
-
-    System.out.print("Masukkan Jenis Tiket: ");
-    String jenisTiket = scanner.nextLine();
-
-    // Mengambil atribut lainnya dari data yang telah diinisialisasi sebelumnya
-    double hargaTiket = 500000;
-    int jumlahTiketTersedia = 45;
-    String tempatKonser = "GBK";
-    String daftarTempatDuduk = "VIP1";
-    String tipeTempatDuduk = "VIP";
-}
 
 
 //init data pembayaran
@@ -166,50 +140,7 @@ public static pembayaran inputPembayaran() {
         pembayaran pembayaran = new pembayaran(metodePembayaran, noKartuKredit, jumlahTiket, jenisTiket, 0.0, 0.0);
         return pembayaran;
     
-    }
-
-//init data pembatalan
-        public static void initPembatalan() {
-        pembatalan dataPembatalan = new pembatalan();
-
-        dataPembatalan.setNoReferensiTiket(1);
-        dataPembatalan.setPengembalianUang(100000.0);
-
-        System.out.println("Data Pembatalan:");
-        System.out.println(dataPembatalan.toString());
-
-        pembatalan dataPembatalan2 = new pembatalan(2, 10000000.0);
-        cetakPembatalan(dataPembatalan2);
-
-        pembatalan dataPembatalan3 = new pembatalan(3, 900000.0);
-        cetakPembatalan(dataPembatalan3);
-
-        pembatalan dataPembatalan4 = new pembatalan(4, 28000000.0);
-        cetakPembatalan(dataPembatalan4);
-    }
-
-    public static void cetakPembatalan(pembatalan dataPembatalan) {
-        System.out.println("Data Pembatalan");
-        System.out.println("No Referensi Tiket: " + dataPembatalan.getNoReferensiTiket());
-        System.out.println("Pengembalian Uang: " + dataPembatalan.getPengembalianUang());
-    }
-//input data pembatalan
-    public static void inputPembatalan() {
-        System.out.println("Pembatalan");
-
-        System.out.print("Masukkan Alasan Pembatalan: ");
-        String alasanPembatalan = scanner.nextLine();
-
-        // Nomor referensi tiket diatur secara otomatis
-        int noReferensiTiket = 5;
-        // Tanggal pembatalan diatur secara otomatis
-        LocalDate tanggalPembatalan = LocalDate.now();
-
-        pembatalan dataPembatalan = new pembatalan(noReferensiTiket, alasanPembatalan);
-        
-        System.out.println("Data Pembatalan:");
-        System.out.println(dataPembatalan.toString());
-    }
+}
 
 public static void initTiket() {
     int nomorReservasi = 23912;
