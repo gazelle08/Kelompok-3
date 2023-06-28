@@ -149,16 +149,5 @@ public static void initTiket() {
     double hargaTiket = 5000000.0;
     String tempatKonser = "GBK";
     String tipeTiket = "VIP";
-
-    tiket dataTiket = new tiket();
-    dataTiket.setNoPemesanan(nomorReservasi);
-    dataTiket.setDaftarKonser(namaKonser);
-    dataTiket.setJenisTiket(tipeTiket);
-    dataTiket.setHarga(hargaTiket);
-    dataTiket.setTempatKonser(tempatKonser);
-    dataTiket.setTipeTempatDuduk(tipeTiket);
-
-    System.out.println("Data Tiket:");
-    System.out.println(dataTiket.toString());
 }
 }

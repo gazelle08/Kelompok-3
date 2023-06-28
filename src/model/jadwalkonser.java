@@ -4,19 +4,30 @@
 package model;
 
 public class jadwalkonser {
-/*
- * Deskripsi: Tampilan Jadwal Konser
- * Atribut:
- * Nama Konser
- * Nama artis/group musik
- * 
- * Tugas:
- * Menampilkan nama konser yang dimiliki oleh nama artis/ group musik
- * Menampilkan nama artis atau grup musik yang akan tampil dalam konser.
- */ 
 
+Integer idJadwalKonser;
 String namaKonser;
 String namaArtis;
+String tempatKonser;
+
+
+public jadwalkonser() {
+    }
+
+    public jadwalkonser(Integer idJadwalKonser, String namaKonser, String namaArtis, String tempatKonser) {
+        this.idJadwalKonser = idJadwalKonser;
+        this.namaKonser = namaKonser;
+        this.namaArtis = namaArtis;
+        this.tempatKonser = tempatKonser;
+    }
+
+    public Integer getIdJadwalKonser() {
+        return this.idJadwalKonser;
+    }
+
+    public void setIdJadwalKonser(Integer idJadwalKonser) {
+        this.idJadwalKonser = idJadwalKonser;
+    }
 
     public String getNamaKonser() {
         return this.namaKonser;
@@ -34,20 +45,21 @@ String namaArtis;
         this.namaArtis = namaArtis;
     }
 
-
-    public jadwalkonser() {
+    public String getTempatKonser() {
+        return this.tempatKonser;
     }
 
-    public jadwalkonser(String namaKonser, String namaArtis) {
-        this.namaKonser = namaKonser;
-        this.namaArtis = namaArtis;
+    public void setTempatKonser(String tempatKonser) {
+        this.tempatKonser = tempatKonser;
     }
 
     @Override
     public String toString() {
         return "{" +
-            " namaKonser='" + getNamaKonser() + "'" +
+            " idJadwalKonser='" + getIdJadwalKonser() + "'" +
+            ", namaKonser='" + getNamaKonser() + "'" +
             ", namaArtis='" + getNamaArtis() + "'" +
+            ", tempatKonser='" + getTempatKonser() + "'" +
             "}";
     }
 

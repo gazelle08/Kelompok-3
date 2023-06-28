@@ -4,48 +4,31 @@
 package model;
 
 public class tiket {
-/*
- * Deskripsi : Menampilkan Reservasi
- * Atribut :
-*Daftar Konser
-*Jenis Tiket
-*Tanggal dan Waktu
-*Harga
-*Tempat Konser
-*Tipe Tempat Duduk
 
-Tugas:
-Menampilkan daftar konser musik yang telah dibeli sebelumnya
-Menampilkan jenis tiket yang dibeli oleh customer seperti reguler atau VIP
-Menampilkan tanggal dan waktu mulainya konser
-Menampilkan harga tiket yang sudah dipilih sebelumnya
-Menampilkan tempat lokasi yang harus dituju oleh customer
-Menampilkan lokasi tempat duduk mana yang akan diduduki oleh customer berdasarkan tipe tiket yang ia beli
- */
-
-String daftarKonser;
+Integer idTiket;
 String jenisTiket;
-double harga;
-String tempatKonser;
-String tipeTempatDuduk;
+String hargaTiket;
+String tempatDuduk;
+String dataReservasi;
 
-    public tiket(String daftarKonser, String jenisTiket, double harga, String tempatKonser, String tipeTempatDuduk) {
-        this.daftarKonser = daftarKonser;
-        this.jenisTiket = jenisTiket;
-        this.harga = harga;
-        this.tempatKonser = tempatKonser;
-        this.tipeTempatDuduk = tipeTempatDuduk;
-    }
 
     public tiket() {
     }
 
-    public String getDaftarKonser() {
-        return this.daftarKonser;
+    public tiket(Integer idTiket, String jenisTiket, String hargaTiket, String tempatDuduk, String dataReservasi) {
+        this.idTiket = idTiket;
+        this.jenisTiket = jenisTiket;
+        this.hargaTiket = hargaTiket;
+        this.tempatDuduk = tempatDuduk;
+        this.dataReservasi = dataReservasi;
     }
 
-    public void setDaftarKonser(String daftarKonser) {
-        this.daftarKonser = daftarKonser;
+    public Integer getIdTiket() {
+        return this.idTiket;
+    }
+
+    public void setIdTiket(Integer idTiket) {
+        this.idTiket = idTiket;
     }
 
     public String getJenisTiket() {
@@ -56,42 +39,29 @@ String tipeTempatDuduk;
         this.jenisTiket = jenisTiket;
     }
 
-    public double getHarga() {
-        return this.harga;
+    public String getHargaTiket() {
+        return this.hargaTiket;
     }
 
-    public void setHarga(double harga) {
-        this.harga = harga;
+    public void setHargaTiket(String hargaTiket) {
+        this.hargaTiket = hargaTiket;
     }
 
-    public String getTempatKonser() {
-        return this.tempatKonser;
+    public String getTempatDuduk() {
+        return this.tempatDuduk;
     }
 
-    public void setTempatKonser(String tempatKonser) {
-        this.tempatKonser = tempatKonser;
+    public void setTempatDuduk(String tempatDuduk) {
+        this.tempatDuduk = tempatDuduk;
     }
 
-    public String getTipeTempatDuduk() {
-        return this.tipeTempatDuduk;
+    public String getDataReservasi() {
+        return this.dataReservasi;
     }
 
-    public void setTipeTempatDuduk(String tipeTempatDuduk) {
-        this.tipeTempatDuduk = tipeTempatDuduk;
+    public void setDataReservasi(String dataReservasi) {
+        this.dataReservasi = dataReservasi;
     }
 
-    @Override
-    public String toString() {
-        return "{" +
-            " daftarKonser='" + getDaftarKonser() + "'" +
-            ", jenisTiket='" + getJenisTiket() + "'" +
-            ", harga='" + getHarga() + "'" +
-            ", tempatKonser='" + getTempatKonser() + "'" +
-            ", tipeTempatDuduk='" + getTipeTempatDuduk() + "'" +
-            "}";
-    }
-
-    public void setNoPemesanan(int nomorReservasi) {
-    }
 
 }
