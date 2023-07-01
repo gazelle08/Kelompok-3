@@ -3,18 +3,17 @@
  */
 package model;
 
-public class jadwalkonser {
+public class Jadwalkonser {
+    private Integer idJadwalKonser;
+    private String namaKonser;
+    private String namaArtis;
+    private String tempatKonser;
 
-Integer idJadwalKonser;
-String namaKonser;
-String namaArtis;
-String tempatKonser;
 
-
-public jadwalkonser() {
+public Jadwalkonser() {
     }
 
-    public jadwalkonser(Integer idJadwalKonser, String namaKonser, String namaArtis, String tempatKonser) {
+    public Jadwalkonser(Integer idJadwalKonser, String namaKonser, String namaArtis, String tempatKonser) {
         this.idJadwalKonser = idJadwalKonser;
         this.namaKonser = namaKonser;
         this.namaArtis = namaArtis;

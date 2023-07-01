@@ -4,69 +4,93 @@
 
 package model;
 
-public class reservasi {
-
-String costumer;
- String daftarKonser;
- String jenisTiket;
- String hargaTiket;
+import java.util.ArrayList;
 
 
-    public reservasi() {
-    }
-    
+public class Reservasi<Private> {
 
-    public String getCostumer() {
-        return this.costumer;
-    }
+    private Integer idReservasi;
+    private Integer jumlahTiket;
+    private Customer customers;
+    private Jadwalkonser jadwalkonserr;
+    private Tiket tiket;
+    private ArrayList<Customer> customer = 
+        new ArrayList<Customer>();
 
-    public void setCostumer(String costumer) {
-        this.costumer = costumer;
+
+    public Reservasi() {
     }
 
-    public String getDaftarKonser() {
-        return this.daftarKonser;
+    public Reservasi(Integer idReservasi, Customer customers, Jadwalkonser jadwalkonserr, Tiket tiket, ArrayList<Customer> costumer, Integer jumlahTiket) {
+        this.idReservasi = idReservasi;
+        this.customers = customers;
+        this.jadwalkonserr = jadwalkonserr;
+        this.tiket = tiket;
+        this.customer = customer;
+        this.jumlahTiket = jumlahTiket;
     }
 
-    public void setDaftarKonser(String daftarKonser) {
-        this.daftarKonser = daftarKonser;
+    public Integer getIdReservasi() {
+        return this.idReservasi;
     }
 
-    public String getJenisTiket() {
-        return this.jenisTiket;
+    public void setIdReservasi(Integer idReservasi) {
+        this.idReservasi = idReservasi;
     }
 
-    public void setJenisTiket(String jenisTiket) {
-        this.jenisTiket = jenisTiket;
+    public Customer getCustomers() {
+        return this.customers;
     }
 
-    public String getHargaTiket() {
-        return this.hargaTiket;
+    public void setCustomers(Customer customers) {
+        this.customers = customers;
     }
 
-    public void setHargaTiket(String hargaTiket) {
-        this.hargaTiket = hargaTiket;
+    public Jadwalkonser getJadwalkonserr() {
+        return this.jadwalkonserr;
     }
 
-
-
-    public reservasi(String costumer, String daftarKonser, String jenisTiket, String hargaTiket) {
-        this.costumer = costumer;
-        this.daftarKonser = daftarKonser;
-        this.jenisTiket = jenisTiket;
-        this.hargaTiket = hargaTiket;
+    public void setJadwalkonserr(Jadwalkonser jadwalkonserr) {
+        this.jadwalkonserr = jadwalkonserr;
     }
 
+    public Tiket getTiket() {
+        return this.tiket;
+    }
+
+    public void setTiket(Tiket tiket) {
+        this.tiket = tiket;
+    }
+
+    public ArrayList<Customer> getCustomer() {
+        return this.customer;
+    }
+
+    public void setCustomer(ArrayList<Customer> customer) {
+        this.customer = customer;
+    }
+
+    public Integer getJumlahTiket() {
+        return this.jumlahTiket;
+    }
+
+    public void setJumlahTiket(Integer jumlahTiket) {
+        this.jumlahTiket = jumlahTiket;
+    }
 
     @Override
     public String toString() {
         return "{" +
-            " costumer='" + getCostumer() + "'" +
-            ", daftarKonser='" + getDaftarKonser() + "'" +
-            ", jenisTiket='" + getJenisTiket() + "'" +
-            ", hargaTiket='" + getHargaTiket() + "'" +
+            " idReservasi='" + getIdReservasi() + "'" +
+            ", customers='" + getCustomers() + "'" +
+            ", jadwalkonserr='" + getJadwalkonserr() + "'" +
+            ", tiket='" + getTiket() + "'" +
+            ", customer='" + getCustomer() + "'" +
+            ", jumlahTiket='" + getJumlahTiket() + "'" +
             "}";
     }
+
+
 }
 
 

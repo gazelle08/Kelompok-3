@@ -3,24 +3,23 @@
  */
 package model;
 
-public class tiket {
+public class Tiket {
+    private Integer idTiket;
+    private String jenisTiket;
+    private Double hargaTiket;
+    private String tempatDuduk;
+    private Reservasi reservasii;
 
-Integer idTiket;
-String jenisTiket;
-String hargaTiket;
-String tempatDuduk;
-String dataReservasi;
 
-
-    public tiket() {
+    public Tiket() {
     }
 
-    public tiket(Integer idTiket, String jenisTiket, String hargaTiket, String tempatDuduk, String dataReservasi) {
+    public Tiket(Integer idTiket, String jenisTiket, Double hargaTiket, String tempatDuduk, Reservasi reservasii) {
         this.idTiket = idTiket;
         this.jenisTiket = jenisTiket;
         this.hargaTiket = hargaTiket;
         this.tempatDuduk = tempatDuduk;
-        this.dataReservasi = dataReservasi;
+        this.reservasii = reservasii;
     }
 
     public Integer getIdTiket() {
@@ -39,11 +38,11 @@ String dataReservasi;
         this.jenisTiket = jenisTiket;
     }
 
-    public String getHargaTiket() {
+    public Double getHargaTiket() {
         return this.hargaTiket;
     }
 
-    public void setHargaTiket(String hargaTiket) {
+    public void setHargaTiket(Double hargaTiket) {
         this.hargaTiket = hargaTiket;
     }
 
@@ -55,13 +54,23 @@ String dataReservasi;
         this.tempatDuduk = tempatDuduk;
     }
 
-    public String getDataReservasi() {
-        return this.dataReservasi;
+    public Reservasi getReservasii() {
+        return this.reservasii;
     }
 
-    public void setDataReservasi(String dataReservasi) {
-        this.dataReservasi = dataReservasi;
+    public void setReservasii(Reservasi reservasii) {
+        this.reservasii = reservasii;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+            " idTiket='" + getIdTiket() + "'" +
+            ", jenisTiket='" + getJenisTiket() + "'" +
+            ", hargaTiket='" + getHargaTiket() + "'" +
+            ", tempatDuduk='" + getTempatDuduk() + "'" +
+            ", reservasii='" + getReservasii() + "'" +
+            "}";
+    }
 
 }
