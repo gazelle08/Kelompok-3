@@ -1,5 +1,5 @@
 import model.Jadwalkonser;
-import model.pembayaran;
+import model.Pembayaran;
 import model.Reservasi;
 import model.Tiket;
 import model.Customer;
@@ -28,7 +28,10 @@ public static void inputDataCustomer() {
         alamatEmail = input.nextLine();
 
         Customer tmpCustomer = new Customer(idCustomer, nama, alamatEmail);
+        customer.add(tmpCustomer);
+
     }
+
 
 // input data reservasi
 public static void inputDataReservasi(){
@@ -38,7 +41,11 @@ public static void inputDataReservasi(){
         idReservasi = input.nextInt();
         
         System.out.println("Masukkan Jumlah Tiket /t: ");
-        jumlahTiket = input.nextInt();      
+        jumlahTiket = input.nextInt(); 
+         
+Reservasi tmpReservasi = new Reservasi(idReservasi, null, null, null, customer, jumlahTiket);
+reservasi.add(tmpReservasi);
+    
 }
 
 //input data tiket
@@ -84,14 +91,11 @@ public static void init() {
     }
 //init data pembayaran
     public static void initPembayaran () {
-
+        Pembayaran dataPembayaran = new Pembayaran(null, null, null, null, null);
     }
 
 //init data tiket
-    public static void initTiket() {
-        Tiket tiket1 = new Tiket(556431, "VIP", 99999.99, "setVIP15");
-}
-public static void cetakMahasiswa(Tiket x){
-        System.out.println(x.getIdTiket() + " "+ x.getJenisTiket()+ " "+ x.getHargaTiket()+ " "+ x.getTempatDuduk());
+   public static void initTiket() {
+    Tiket tiket1 = new Tiket(null, null, null, null, null);
 }
 }
