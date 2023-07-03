@@ -2,7 +2,6 @@ import model.Jadwalkonser;
 import model.pembayaran;
 import model.Reservasi;
 import model.Tiket;
-import model.tiket;
 import model.Customer;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -54,7 +53,7 @@ public static void init() {
     }
 //init data reservasi
     public static void initReservasi() {
-        Reservasi dataReservasi1 = new Reservasi (null, null, null, null);
+        Reservasi dataReservasi1 = new Reservasi (null, null, null, null, customer, null);
 
     }
 //init data pembayaran

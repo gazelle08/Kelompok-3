@@ -74,7 +74,7 @@ double totalPembayaran;
     }
 
     public void setTotalPembayaran(double totalPembayaran) {
-        this.totalPembayaran = totalPembayaran;
+        this.totalPembayaran = harga*jumlahTiket;
     }
 
     public pembayaran() {
@@ -88,12 +88,7 @@ double totalPembayaran;
         this.harga = harga;
         this.totalPembayaran = totalPembayaran;
     }
-
-    public pembayaran(String metodePembayaran2, double nominalPembayaran, String tanggalPembayaran) {
-    }
-
-    public pembayaran(String metodePembayaran2, double nominalPembayaran) {
-    }
+    
 
     @Override
     public String toString() {
@@ -106,7 +101,6 @@ double totalPembayaran;
             ", totalPembayaran='" + getTotalPembayaran() + "'" +
             "}";
     }
-
 }
 
 
