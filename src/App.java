@@ -28,9 +28,8 @@ public static void inputDataCustomer() {
         alamatEmail = input.nextLine();
 
         Customer tmpCustomer = new Customer(idCustomer, nama, alamatEmail);
-        int pilihan = 0;
-
     }
+
 // input data reservasi
 public static void inputDataReservasi(){
     Scanner input = new Scanner(System.in);
@@ -39,9 +38,28 @@ public static void inputDataReservasi(){
         idReservasi = input.nextInt();
         
         System.out.println("Masukkan Jumlah Tiket /t: ");
-        jumlahTiket = input.nextInt();
+        jumlahTiket = input.nextInt();      
+}
 
-        
+//input data tiket
+public class Tiket {
+    private Integer idTiket;
+    private String jenisTiket;
+    private Double hargaTiket;
+    private String tempatDuduk;
+    private ArrayList<Reservasi> reservasiList;
+
+    public Tiket(Integer idTiket, String jenisTiket, Double hargaTiket, String tempatDuduk) {
+        this.idTiket = idTiket;
+        this.jenisTiket = jenisTiket;
+        this.hargaTiket = hargaTiket;
+        this.tempatDuduk = tempatDuduk;
+        this.reservasiList = new ArrayList<>();
+    }
+
+    public void tambahkanReservasi(Reservasi reservasi) {
+        reservasiList.add(reservasi);
+    }
 }
 
 public static void init() {
@@ -61,7 +79,7 @@ public static void init() {
     }
 //init data reservasi
     public static void initReservasi() {
-        Reservasi dataReservasi1 = new Reservasi (null, null, null, null, customer, null);
+        Reservasi dataReservasi1 = new Reservasi (null, null, null, null, null, null);
 
     }
 //init data pembayaran
@@ -71,7 +89,7 @@ public static void init() {
 
 //init data tiket
     public static void initTiket() {
-        Tiket tiket1 = new Tiket(556431, "VIP", 99999.99, "setVIP15", null);
+        Tiket tiket1 = new Tiket(556431, "VIP", 99999.99, "setVIP15");
 }
 public static void cetakMahasiswa(Tiket x){
         System.out.println(x.getIdTiket() + " "+ x.getJenisTiket()+ " "+ x.getHargaTiket()+ " "+ x.getTempatDuduk());

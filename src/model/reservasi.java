@@ -30,6 +30,7 @@ public class Reservasi<Private> {
         this.jumlahTiket = jumlahTiket;
     }
 
+
     public Integer getIdReservasi() {
         return this.idReservasi;
     }
