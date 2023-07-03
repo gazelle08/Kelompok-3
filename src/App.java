@@ -1,4 +1,5 @@
 import model.Jadwalkonser;
+import model.Pembayaran;
 import model.pembayaran;
 import model.Reservasi;
 import model.Tiket;
@@ -84,12 +85,17 @@ public static void init() {
     }
 //init data pembayaran
     public static void initPembayaran () {
-
+        Pembayaran pembayaran1 = new Pembayaran(122, "Visa", 12345321, 99999.99, null);
+        Pembayaran pembayaran2 = new Pembayaran(123, "Debit", 12347822, 69999.99, null);
+        Pembayaran pembayaran3 = new Pembayaran(127, "Mastercard", 12349162, 69999.99, null);
     }
 
 //init data tiket
     public static void initTiket() {
-        Tiket tiket1 = new Tiket(556431, "VIP", 99999.99, "setVIP15");
+        Tiket tiket1 = new Tiket(556431, "VIP", 99999.99, "setVIP15", null);
+        Tiket tiket2 = new Tiket(556431, "VIP", 99999.99, "setReguler53", null);
+        Tiket tiket3 = new Tiket(556431, "VIP", 99999.99, "setReguler34", null);
+
 }
 public static void cetakMahasiswa(Tiket x){
         System.out.println(x.getIdTiket() + " "+ x.getJenisTiket()+ " "+ x.getHargaTiket()+ " "+ x.getTempatDuduk());
