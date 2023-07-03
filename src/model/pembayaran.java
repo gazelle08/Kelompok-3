@@ -3,105 +3,89 @@
  */     
 package model;
 
-public class pembayaran {
+public class Pembayaran {
     /*
-* Deskripsi:
-*  Atribut:
-*      - Metode pembayaran 
-*      - Nomor kartu kredit 
-*      - Jumlah tiket
-*      - Jenis tiket
-*      - Harga
-*      - Total Pembayaran
-*  Tugas:
-*      - Pengguna diberikan opsi untuk memilih metode pembayaran yang paling sesuai untuk mereka
-*      - Nomor kartu kredit pengguna yang digunakan untuk melakukan pembayaran 
-*      - Memperlihatkan kuantitas tiket yang telah dibeli pengguna
-*      - Menampilkan jenis tiket yang dibeli oleh customer seperti reguler atau VIP
-*      - Menampilkan harga tiket yang sudah dipilih sebelumnya
-*      - Memperlihatkan nilai yang perlu dibayar oleh pengguna
-*/
+     * Deskripsi:
+     * Atribut:
+     *   - idPembayaran
+     *   - metodePembayaran 
+     *   - noKartu
+     *   - totalPembayaran
+     *   - dataReservasi
+     * Tugas:
+     *   - Mengatur metode pembayaran yang dipilih oleh pengguna
+     *   - Mengatur nomor kartu kredit yang digunakan untuk pembayaran
+     *   - Menampilkan jumlah tiket yang dibeli oleh pengguna
+     *   - Menampilkan jenis tiket yang dibeli seperti reguler atau VIP
+     *   - Menampilkan harga tiket yang sudah dipilih sebelumnya
+     *   - Menampilkan total pembayaran yang harus dibayar oleh pengguna
+     */
 
-String metodePembayaran;
-int noKartuKredit;
-int jumlahTiket;
-String jenisTiket;
-double harga;
-double totalPembayaran;
+    private Integer idPembayaran;
+    private String metodePembayaran;
+    private Integer noKartu;
+    private Double totalPembayaran;
+    private Reservasi dataReservasi;
+
+    public Pembayaran() {
+    }
+
+    public Pembayaran(Integer idPembayaran, String metodePembayaran, Integer noKartu, Double totalPembayaran, Reservasi dataReservasi) {
+        this.idPembayaran = idPembayaran;
+        this.metodePembayaran = metodePembayaran;
+        this.noKartu = noKartu;
+        this.totalPembayaran = totalPembayaran;
+        this.dataReservasi = dataReservasi;
+    }
+
+    public Integer getIdPembayaran() {
+        return idPembayaran;
+    }
+
+    public void setIdPembayaran(Integer idPembayaran) {
+        this.idPembayaran = idPembayaran;
+    }
 
     public String getMetodePembayaran() {
-        return this.metodePembayaran;
+        return metodePembayaran;
     }
 
     public void setMetodePembayaran(String metodePembayaran) {
         this.metodePembayaran = metodePembayaran;
     }
 
-    public int getNoKartuKredit() {
-        return this.noKartuKredit;
+    public Integer getNoKartu() {
+        return noKartu;
     }
 
-    public void setNoKartuKredit(int noKartuKredit) {
-        this.noKartuKredit = noKartuKredit;
+    public void setNoKartu(Integer noKartu) {
+        this.noKartu = noKartu;
     }
 
-    public int getJumlahTiket() {
-        return this.jumlahTiket;
+    public Double getTotalPembayaran() {
+        return totalPembayaran;
     }
 
-    public void setJumlahTiket(int jumlahTiket) {
-        this.jumlahTiket = jumlahTiket;
-    }
-
-    public String getJenisTiket() {
-        return this.jenisTiket;
-    }
-
-    public void setJenisTiket(String jenisTiket) {
-        this.jenisTiket = jenisTiket;
-    }
-
-    public double getHarga() {
-        return this.harga;
-    }
-
-    public void setHarga(double harga) {
-        this.harga = harga;
-    }
-
-    public double getTotalPembayaran() {
-        return this.totalPembayaran;
-    }
-
-    public void setTotalPembayaran(double totalPembayaran) {
-        this.totalPembayaran = harga*jumlahTiket;
-    }
-
-    public pembayaran() {
-    }
-
-    public pembayaran(String metodePembayaran, int noKartuKredit, int jumlahTiket, String jenisTiket, double harga, double totalPembayaran) {
-        this.metodePembayaran = metodePembayaran;
-        this.noKartuKredit = noKartuKredit;
-        this.jumlahTiket = jumlahTiket;
-        this.jenisTiket = jenisTiket;
-        this.harga = harga;
+    public void setTotalPembayaran(Double totalPembayaran) {
         this.totalPembayaran = totalPembayaran;
     }
-    
+
+    public Reservasi getDataReservasi() {
+        return dataReservasi;
+    }
+
+    public void setDataReservasi(Reservasi dataReservasi) {
+        this.dataReservasi = dataReservasi;
+    }    
 
     @Override
     public String toString() {
-        return "{" +
-            " metodePembayaran='" + getMetodePembayaran() + "'" +
-            ", noKartuKredit='" + getNoKartuKredit() + "'" +
-            ", jumlahTiket='" + getJumlahTiket() + "'" +
-            ", jenisTiket='" + getJenisTiket() + "'" +
-            ", harga='" + getHarga() + "'" +
-            ", totalPembayaran='" + getTotalPembayaran() + "'" +
-            "}";
+        return "Pembayaran{" +
+            "idPembayaran='" + idPembayaran + '\'' +
+            ", metodePembayaran='" + metodePembayaran + '\'' +
+            ", noKartu='" + noKartu + '\'' +
+            ", totalPembayaran='" + totalPembayaran + '\'' +
+            ", dataReservasi='" + dataReservasi + '\'' +
+            '}';
     }
 }
-
-
-
