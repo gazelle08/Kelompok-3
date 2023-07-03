@@ -19,37 +19,45 @@ public static void inputDataCustomer() {
         Scanner input = new Scanner(System.in);
         Integer idCustomer;
         String nama, alamatEmail;
-        System.out.print("ID Customer: ");
+        System.out.println("Masukkan ID Customer /t: ");
         idCustomer = input.nextInt();
         input.nextLine();
-        System.out.print("Nama: ");
+        System.out.println("Masukkan Nama /t: ");
         nama = input.nextLine();
-        System.out.print("Alamat Email: ");
+        System.out.println("Masukkan Alamat Email /t: ");
         alamatEmail = input.nextLine();
 
         Customer tmpCustomer = new Customer(idCustomer, nama, alamatEmail);
         int pilihan = 0;
 
     }
-// input data jadwal konser
+// input data reservasi
+public static void inputDataReservasi(){
+    Scanner input = new Scanner(System.in);
+        Integer idReservasi, jumlahTiket;
+        System.out.println("Masukkan ID Reservasi /t: ");
+        idReservasi = input.nextInt();
+        
+        System.out.println("Masukkan Jumlah Tiket /t: ");
+        jumlahTiket = input.nextInt();
 
+        
+}
 
 public static void init() {
         initJadwalkonser();
         initReservasi();
         initPembayaran();
         initTiket();
-        initCustomer();
-}
-// init data customer
-    private static void initCustomer() {
-        Customer customer1 = new Customer(122648, "Clara Xarena", "xaren123@gmail.com"); 
-}
+} 
 //init data jadwal konser
     public static void initJadwalkonser() {
         Jadwalkonser konser1 = new Jadwalkonser(112, "STAR LIGHT", "ASTRO", "Indonesia Convention Exhibition (ICE)");
         Jadwalkonser konser2 = new Jadwalkonser(113, "BORN PINK", "BLACKPINK", "Gelora Bung Karno (GBK)");
         Jadwalkonser konser3 = new Jadwalkonser(114, "REVE FESTIVAL", "RED VELVED", "Jakarta Convention Center (JCC)");
+    }
+    public static void cetakMahasiswa(Jadwalkonser x){
+        System.out.println(x.getIdJadwalKonser() + " "+ x.getNamaKonser() + " " +x.getNamaArtis()+ " " +x.getTempatKonser() );
     }
 //init data reservasi
     public static void initReservasi() {
@@ -64,5 +72,8 @@ public static void init() {
 //init data tiket
     public static void initTiket() {
         Tiket tiket1 = new Tiket(556431, "VIP", 99999.99, "setVIP15", null);
+}
+public static void cetakMahasiswa(Tiket x){
+        System.out.println(x.getIdTiket() + " "+ x.getJenisTiket()+ " "+ x.getHargaTiket()+ " "+ x.getTempatDuduk());
 }
 }
