@@ -18,9 +18,6 @@ public class Reservasi<Private> {
         new ArrayList<Customer>();
 
 
-    public Reservasi() {
-    }
-
     public Reservasi(Integer idReservasi, Customer customers, Jadwalkonser jadwalkonserr, Tiket tiket, ArrayList<Customer> costumer, Integer jumlahTiket) {
         this.idReservasi = idReservasi;
         this.customers = customers;
@@ -28,6 +25,9 @@ public class Reservasi<Private> {
         this.tiket = tiket;
         this.customer = customer;
         this.jumlahTiket = jumlahTiket;
+    }
+
+    public Reservasi() {
     }
 
 
