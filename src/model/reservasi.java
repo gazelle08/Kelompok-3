@@ -23,7 +23,6 @@ public class Reservasi<Private> {
         this.customers = customers;
         this.jadwalkonserr = jadwalkonserr;
         this.tiket = tiket;
-        this.customer = customer;
         this.jumlahTiket = jumlahTiket;
     }
 
