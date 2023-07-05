@@ -62,4 +62,11 @@ public Jadwalkonser() {
             "}";
     }
 
+    public void setTiket(Tiket tiket2) {
+    }
+
+    public Tiket getTiket() {
+        return null;
+    }
+
 }

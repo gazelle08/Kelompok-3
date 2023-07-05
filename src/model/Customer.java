@@ -1,7 +1,7 @@
 package model;
 
 public class Customer {
-    private Integer idCostumer;
+    private Integer idCustomer;
     private String nama;
     private String alamatEmail;
   
@@ -9,18 +9,18 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer idCostumer, String nama, String alamatEmail) {
-        this.idCostumer = idCostumer;
+    public Customer(Integer idCustomer, String nama, String alamatEmail) {
+        this.idCustomer = idCustomer;
         this.nama = nama;
         this.alamatEmail = alamatEmail;
     }
 
     public Integer getIdCostumer() {
-        return this.idCostumer;
+        return this.idCustomer;
     }
 
-    public void setIdCostumer(Integer idCostumer) {
-        this.idCostumer = idCostumer;
+    public void setIdCostumer(Integer idCustomer) {
+        this.idCustomer = idCustomer;
     }
 
     public String getNama() {
@@ -42,10 +42,22 @@ public class Customer {
     @Override
     public String toString() {
         return "{" +
-            " idCostumer='" + getIdCostumer() + "'" +
+            " idCustomer='" + getIdCustomer() + "'" +
             ", nama='" + getNama() + "'" +
             ", alamatEmail='" + getAlamatEmail() + "'" +
             "}";
+    }
+
+    public String getIdCustomer() {
+        return null;
+    }
+
+    public int size() {
+        return 0;
+    }
+
+    public Customer get(int i) {
+        return null;
     }
     
 }

@@ -18,18 +18,21 @@ public class Reservasi<Private> {
         new ArrayList<Customer>();
 
 
-    public Reservasi(Integer idReservasi, Customer customers, Jadwalkonser jadwalkonserr, Tiket tiket, ArrayList<Customer> costumer, Integer jumlahTiket) {
+public Reservasi(Integer idReservasi, ArrayList<Customer> customer, Jadwalkonser jadwalKonser, Tiket tiket, Integer jumlahTiket) {
         this.idReservasi = idReservasi;
-        this.customers = customers;
-        this.jadwalkonserr = jadwalkonserr;
+        this.customer = customer;
+        this.jadwalkonserr = jadwalKonser;
         this.tiket = tiket;
         this.jumlahTiket = jumlahTiket;
     }
-
-    public Reservasi() {
+    public Reservasi(Integer idReservasi2, Jadwalkonser jadwalKonser, Object object, Object object2, ArrayList<Customer> customer2, Integer jumlahTiket2) {
     }
 
 
+    public Reservasi(Integer idReservasi2, Jadwalkonser jadwalKonser, Object jadwalkonserr2, Object tiket2,
+            Customer customer2, Integer jumlahTiket2) {
+    }
+    
     public Integer getIdReservasi() {
         return this.idReservasi;
     }
@@ -88,6 +91,8 @@ public class Reservasi<Private> {
             ", customer='" + getCustomer() + "'" +
             ", jumlahTiket='" + getJumlahTiket() + "'" +
             "}";
+    }
+    public void setPembayaran(Pembayaran tmpPembayaran) {
     }
 
 

@@ -30,7 +30,7 @@ public class Pembayaran {
     public Pembayaran() {
     }
 
-    public Pembayaran(Integer idPembayaran, String metodePembayaran, Integer noKartu, Double totalPembayaran, Reservasi dataReservasi) {
+    public Pembayaran(Integer idPembayaran, String metodePembayaran, Integer noKartu2, Double totalPembayaran, Reservasi dataReservasi) {
         this.idPembayaran = idPembayaran;
         this.metodePembayaran = metodePembayaran;
         this.noKartu = noKartu;
