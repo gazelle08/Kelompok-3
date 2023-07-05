@@ -47,7 +47,7 @@ public static void inputDataReservasi(){
 
 
 //input data tiket
-public class Tiket {
+public static class Tiket {
     private Integer idTiket;
     private String jenisTiket;
     private Double hargaTiket;
@@ -117,11 +117,13 @@ public static void cetakPembayaran(Pembayaran x){
 //init data tiket
     public static void initTiket() {
         Tiket tiket1 = new Tiket(556431, "VIP", 99999.99, "setVIP15");
-        Tiket tiket2 = new Tiket(556431, "VIP", 99999.99, "setReguler53");
-        Tiket tiket3 = new Tiket(556431, "VIP", 99999.99, "setReguler34");
+
+        Tiket tiket2 = new Tiket(556461, "VIP", 69999.99, "setReguler53");
+        Tiket tiket3 = new Tiket(557541, "VIP", 69999.99, "setReguler34");
 
 }
-public static void cetakTiket(Tiket x){
+
+public static void cetakMahasiswa(Tiket x){
         System.out.println(x.getIdTiket() + " "+ x.getJenisTiket()+ " "+ x.getHargaTiket()+ " "+ x.getTempatDuduk());
 }
 }
