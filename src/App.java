@@ -1,6 +1,5 @@
 import model.Jadwalkonser;
 import model.Pembayaran;
-import model.pembayaran;
 import model.Reservasi;
 import model.Tiket;
 import model.Customer;
@@ -43,7 +42,7 @@ public static void inputDataReservasi(){
 }
 
 //input data tiket
-public class Tiket {
+public static class Tiket {
     private Integer idTiket;
     private String jenisTiket;
     private Double hargaTiket;
@@ -60,6 +59,22 @@ public class Tiket {
 
     public void tambahkanReservasi(Reservasi reservasi) {
         reservasiList.add(reservasi);
+    }
+
+    public String getIdTiket() {
+        return null;
+    }
+
+    public String getJenisTiket() {
+        return null;
+    }
+
+    public String getHargaTiket() {
+        return null;
+    }
+
+    public String getTempatDuduk() {
+        return null;
     }
 }
 
@@ -92,11 +107,12 @@ public static void init() {
 
 //init data tiket
     public static void initTiket() {
-        Tiket tiket1 = new Tiket(556431, "VIP", 99999.99, "setVIP15", null);
-        Tiket tiket2 = new Tiket(556431, "VIP", 99999.99, "setReguler53", null);
-        Tiket tiket3 = new Tiket(556431, "VIP", 99999.99, "setReguler34", null);
+        Tiket tiket1 = new Tiket(556431, "VIP", 99999.99, "setVIP15");
+        Tiket tiket2 = new Tiket(556461, "VIP", 69999.99, "setReguler53");
+        Tiket tiket3 = new Tiket(557541, "VIP", 69999.99, "setReguler34");
 
 }
+
 public static void cetakMahasiswa(Tiket x){
         System.out.println(x.getIdTiket() + " "+ x.getJenisTiket()+ " "+ x.getHargaTiket()+ " "+ x.getTempatDuduk());
 }
