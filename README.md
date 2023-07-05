@@ -1,18 +1,18 @@
-## Getting Started
+## Sistem Informasi Pemesanan tiket konser
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Sistem informasi ini akan membantu pengguna dalam mempermudah pemesanan tiket konser melalui situs tikethits.com.
 
-## Folder Structure
+## Fitur
+fitur yang terdapat pada sistem informasi ini:
+- jadwal konser
+- reservasi
+- pembayaran
+- menampilkan tiket
 
-The workspace contains two folders by default, where:
+## Susunan Tim
+- Ketua: Adelia Tabita Sihotang (03081220047)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Anggota:
+- Elaine Agustina (030812200037)
+- Vanessa Thames (03081220006)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
