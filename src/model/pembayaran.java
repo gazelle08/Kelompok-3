@@ -4,23 +4,6 @@
 package model;
 
 public class Pembayaran {
-    /*
-     * Deskripsi:
-     * Atribut:
-     *   - idPembayaran
-     *   - metodePembayaran 
-     *   - noKartu
-     *   - totalPembayaran
-     *   - dataReservasi
-     * Tugas:
-     *   - Mengatur metode pembayaran yang dipilih oleh pengguna
-     *   - Mengatur nomor kartu kredit yang digunakan untuk pembayaran
-     *   - Menampilkan jumlah tiket yang dibeli oleh pengguna
-     *   - Menampilkan jenis tiket yang dibeli seperti reguler atau VIP
-     *   - Menampilkan harga tiket yang sudah dipilih sebelumnya
-     *   - Menampilkan total pembayaran yang harus dibayar oleh pengguna
-     */
-
     private Integer idPembayaran;
     private String metodePembayaran;
     private Integer noKartu;
