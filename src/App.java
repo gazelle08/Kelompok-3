@@ -6,6 +6,7 @@ import model.Customer;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+
 public class App {
     static ArrayList<Reservasi> reservasi = new ArrayList<Reservasi>();
     static ArrayList<Customer> customer = new ArrayList<Customer>();
@@ -22,8 +23,10 @@ public class App {
     }
 
     public static void inputDataCustomer() {
-        Integer idCustomer;
-        String nama, alamatEmail;
+    Scanner input = new Scanner(System.in);
+    Integer idCustomer;
+    String nama, alamatEmail;
+    try {
         System.out.println("Masukkan ID Customer : ");
         idCustomer = input.nextInt();
         input.nextLine();
@@ -34,9 +37,17 @@ public class App {
 
         Customer tmpCustomer = new Customer(idCustomer, nama, alamatEmail);
         customer.add(tmpCustomer);
+        System.out.println("Input yang Anda masukkan tidak valid.");
+        input.nextLine(); // Membersihkan input yang tidak valid
     }
+    finally{
+
+    }
+    
+}
 
     public static void showJadwalkonser() {
+        System.out.println();
         System.out.println("Daftar Jadwal Konser:");
         for (Jadwalkonser j : jadwalkonserList) {
             cetakJadwalkonser(j);
@@ -50,7 +61,7 @@ public class App {
 
     public static Jadwalkonser getJadwalKonserById(Integer id) {
         for (Jadwalkonser j : jadwalkonserList) {
-            if (j.getIdJadwalKonser().equals(id)) {
+            if (j.getIdJadwalKonser() == id) {
                 return j;
             }
         }
@@ -58,64 +69,56 @@ public class App {
     }
 
     public static void inputDataReservasi() {
-        // Menampilkan daftar jadwal konser
-        int idReservasiTerakhir = 11240;
-        System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
-        Integer idJadwalKonser = input.nextInt();
-        Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
-        String jenisTiket = null;
 
-        if (jadwalKonser != null) {
-            System.out.println("Pilih Jenis Tiket (1: VIP, 2: Regular): ");
-            int jenisTiketChoice = input.nextInt();
-            input.nextLine();
+    // Menampilkan daftar jadwal konser
+    int idReservasiTerakhir = 11240;
+    System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
+    Integer idJadwalKonser = input.nextInt();
+    Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
+    String jenisTiket;
 
-            if (jenisTiketChoice == 1) {
-                jenisTiket = "VIP";
-            } else if (jenisTiketChoice == 2) {
-                jenisTiket = "Regular";
-            } else {
-                System.out.println("Pilihan Jenis Tiket tidak valid.");
-                return;
-            }
+    if (jadwalKonser != null) {
+        System.out.println();
+        System.out.println("Pilih Jenis Tiket (1: VIP, 2: Regular): ");
+        int jenisTiketChoice = input.nextInt();
 
-            Integer jumlahTiket;
-            System.out.println("Masukkan Jumlah Tiket : ");
-            jumlahTiket = input.nextInt();
-            input.nextLine();
-
-            // Menghasilkan ID Reservasi baru
-            int idReservasiBaru = idReservasiTerakhir + 1;
-
-            Tiket tiket = new Tiket(); // Inisialisasi objek Tiket
-            // Tentukan objek Tiket berdasarkan jenis tiket
-            if (jenisTiket.equals("VIP")) {
-                tiket = new Tiket(12345, "VIP", 750000.0, "setVIP15", null);
-            } else if (jenisTiket.equals("Regular")) {
-                tiket = new Tiket(67890, "Regular", 450000.0, "setReguler53", null);
-            }
-
-            Reservasi tmpReservasi = new Reservasi(idReservasiBaru, customer, jadwalKonser, tiket, jumlahTiket);
-            reservasi.add(tmpReservasi);
-
-            // Memperbarui ID Reservasi terakhir yang digunakan
-            idReservasiTerakhir = idReservasiBaru;
-
-            System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
+        if (jenisTiketChoice == 1) {
+            jenisTiket = "VIP";
+        } else if (jenisTiketChoice == 2) {
+            jenisTiket = "Regular";
         } else {
-            System.out.println("Jadwal konser tidak ditemukan.");
+            System.out.println("Pilihan Jenis Tiket tidak valid.");
+            return;
         }
-    }
 
+        Integer jumlahTiket;
+        System.out.println();
+        System.out.println("Masukkan Jumlah Tiket : ");
+        jumlahTiket = input.nextInt();
+
+        // Menghasilkan ID Reservasi baru
+        int idReservasiBaru = idReservasiTerakhir + 1;
+
+        Reservasi tmpReservasi = new Reservasi(idReservasiBaru, customer, jadwalKonser, null, jumlahTiket);
+        reservasi.add(tmpReservasi);
+
+        // Memperbarui ID Reservasi terakhir yang digunakan
+        idReservasiTerakhir = idReservasiBaru;
+
+        System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
+    } else {
+        System.out.println("Jadwal konser tidak ditemukan.");
+    }
+    }
+ 
 public static void inputDataPembayaran() {
-    System.out.println();
+    Scanner input = new Scanner(System.in);
     System.out.println("Data Pembayaran Tiket Anda");
     System.out.println("Masukkan ID Reservasi : ");
     Integer idReservasi = input.nextInt();
-    input.nextLine();
     Reservasi reservasiTerakhir = null;
     for (Reservasi r : reservasi) {
-        if (r.getIdReservasi() == idReservasi) {
+        if (r.getIdReservasi().equals(idReservasi)) {
             reservasiTerakhir = r;
             break;
         }
@@ -126,7 +129,7 @@ public static void inputDataPembayaran() {
         System.out.println("Total Pembayaran: " + totalPembayaran);
 
         System.out.println("Masukkan Metode Pembayaran : ");
-        String metodePembayaran = input.nextLine();
+        String metodePembayaran = input.next();
 
         Pembayaran pembayaran = new Pembayaran(reservasiTerakhir.getIdReservasi(), metodePembayaran, idReservasi, totalPembayaran, reservasiTerakhir);
         reservasiTerakhir.setPembayaran(pembayaran);
@@ -176,3 +179,4 @@ public static void inputDataPembayaran() {
     }
     
 }
+
