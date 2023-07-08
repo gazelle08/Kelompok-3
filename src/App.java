@@ -66,39 +66,26 @@ public class App {
     Integer idJadwalKonser = input.nextInt();
     Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
     Scanner input = new Scanner(System.in);
-    if (jadwalKonser != null) {
-        System.out.println("Pilih Jenis Tiket (1: VIP, 2: Regular): ");
-        int jenisTiketChoice = input.nextInt();
-        String jenisTiket;
+    Integer jumlahTiket;
+    System.out.println("Masukkan Jumlah Tiket : ");
+    jumlahTiket = input.nextInt();
 
-        if (jenisTiketChoice == 1) {
-            jenisTiket = "VIP";
-        } else if (jenisTiketChoice == 2) {
-            jenisTiket = "Regular";
-        } else {
-            System.out.println("Pilihan Jenis Tiket tidak valid.");
-            return;
-        }
-        Integer jumlahTiket;
-        System.out.println("Masukkan Jumlah Tiket : ");
-        jumlahTiket = input.nextInt();
+if (jadwalKonser != null) {
+    // Menghasilkan ID Reservasi baru
+    int idReservasiBaru = idReservasiTerakhir + 1;
 
-        if (jadwalKonser != null) {
-            // Menghasilkan ID Reservasi baru
-            int idReservasiBaru = idReservasiTerakhir + 1;
+    Reservasi tmpReservasi = new Reservasi<>(idReservasiBaru, customer, jadwalKonser, null, jumlahTiket);
+    reservasi.add(tmpReservasi);
 
-            Reservasi tmpReservasi = new Reservasi<>(idReservasiBaru, customer, jadwalKonser, null, jumlahTiket);
-            reservasi.add(tmpReservasi);
+    // Memperbarui ID Reservasi terakhir yang digunakan
+    idReservasiTerakhir = idReservasiBaru;
 
-            // Memperbarui ID Reservasi terakhir yang digunakan
-            idReservasiTerakhir = idReservasiBaru;
-
-            System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
-        }
-    } else {
+        System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
+        } 
+    else {
         System.out.println("Jadwal konser tidak ditemukan.");
+        }
     }
-}
 
   public static void inputDataPembayaran() {
         Scanner input = new Scanner(System.in);
@@ -145,9 +132,9 @@ public class App {
     }
 
     public static void initJadwalkonser() {
-        Tiket tiket1 = new Tiket(556431, "VIP", 99999.99, "setVIP15", null);
-        Tiket tiket2 = new Tiket(556461, "VIP", 69999.99, "setReguler53", null);
-        Tiket tiket3 = new Tiket(557541, "VIP", 69999.99, "setReguler34", null);
+        Tiket tiket1 = new Tiket(556431, "VIP", 750000.00, "setVIP15", null);
+        Tiket tiket2 = new Tiket(556461, "Reguler", 450000.00, "setReguler53", null);
+        Tiket tiket3 = new Tiket(557541, "Reguler", 450000.00, "setReguler34", null);
 
         Jadwalkonser konser1 = new Jadwalkonser(112, "STAR LIGHT", "ASTRO", "Indonesia Convention Exhibition (ICE)");
         konser1.setTiket(tiket1);
