@@ -62,7 +62,7 @@ public class App {
 
         // Menampilkan daftar jadwal konser
 
-        System.out.println("Masukkan ID Jadwal Konser : ");
+        System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
         Integer idJadwalKonser = input.nextInt();
         Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
         Scanner input = new Scanner(System.in);
