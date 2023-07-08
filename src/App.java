@@ -60,35 +60,48 @@ public class App {
 
     public static void inputDataReservasi() {
 
-        // Menampilkan daftar jadwal konser
-    int idReservasiTerakhir = 11240;
-    System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
-    Integer idJadwalKonser = input.nextInt();
-    Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
-    Scanner input = new Scanner(System.in);
+// Menampilkan daftar jadwal konser
+int idReservasiTerakhir = 11240;
+System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
+Integer idJadwalKonser = input.nextInt();
+Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
+String jenisTiket;
+
+if (jadwalKonser != null) {
+    System.out.println("Pilih Jenis Tiket (1: VIP, 2: Regular): ");
+    int jenisTiketChoice = input.nextInt();
+
+    if (jenisTiketChoice == 1) {
+        jenisTiket = "VIP";
+    } else if (jenisTiketChoice == 2) {
+        jenisTiket = "Regular";
+    } else {
+        System.out.println("Pilihan Jenis Tiket tidak valid.");
+        return;
+    }
+
     Integer jumlahTiket;
     System.out.println("Masukkan Jumlah Tiket : ");
     jumlahTiket = input.nextInt();
 
-if (jadwalKonser != null) {
     // Menghasilkan ID Reservasi baru
     int idReservasiBaru = idReservasiTerakhir + 1;
 
-    Reservasi tmpReservasi = new Reservasi<>(idReservasiBaru, customer, jadwalKonser, null, jumlahTiket);
+    Reservasi tmpReservasi = new Reservasi(idReservasiBaru, customer, jadwalKonser, null, jumlahTiket);
     reservasi.add(tmpReservasi);
 
     // Memperbarui ID Reservasi terakhir yang digunakan
     idReservasiTerakhir = idReservasiBaru;
 
-        System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
-        } 
-    else {
-        System.out.println("Jadwal konser tidak ditemukan.");
-        }
-    }
-
+    System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
+} else {
+    System.out.println("Jadwal konser tidak ditemukan.");
+}
+}
+ 
   public static void inputDataPembayaran() {
         Scanner input = new Scanner(System.in);
+        System.out.println("Pembayaran");
         System.out.println("Masukkan ID Reservasi : ");
         Integer idReservasi = input.nextInt();
         Reservasi reservasiTerakhir = null;
