@@ -130,13 +130,13 @@ public class App {
         Pembayaran pembayaran = new Pembayaran(reservasiTerakhir.getIdReservasi(), metodePembayaran, idReservasi, totalPembayaran, reservasiTerakhir);
         reservasiTerakhir.setPembayaran(pembayaran);
 
-        System.out.println("Pembayaran berhasil ditambahkan!");
+        System.out.println("Pembayaran berhasil dilakukan!");
 
         // Menampilkan data reservasi
         System.out.println();
         System.out.println("Data Reservasi");
-        System.out.println("ID Reservasi: " + reservasiTerakhir.getIdReservasi());
-        System.out.println("Customer: " + reservasiTerakhir.getCustomer());
+        System.out.println("ID Tiket: " + reservasiTerakhir.getIdReservasi());
+        System.out.println("Data Customer: " + reservasiTerakhir.getCustomer());
         System.out.println("Jadwal Konser: " + reservasiTerakhir.getJadwalkonserr().getNamaKonser());
         System.out.println("Nama Artis: " + reservasiTerakhir.getJadwalkonserr().getNamaArtis());
         System.out.println("Lokasi Konser: " + reservasiTerakhir.getJadwalkonserr().getTempatKonser());
