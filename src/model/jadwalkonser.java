@@ -1,6 +1,3 @@
-/*
- * Nama: Vanessa Thames
- */
 package model;
 
 public class Jadwalkonser {
@@ -8,9 +5,9 @@ public class Jadwalkonser {
     private String namaKonser;
     private String namaArtis;
     private String tempatKonser;
+    private Tiket tiket;
 
-
-public Jadwalkonser() {
+    public Jadwalkonser() {
     }
 
     public Jadwalkonser(Integer idJadwalKonser, String namaKonser, String namaArtis, String tempatKonser) {
@@ -52,6 +49,14 @@ public Jadwalkonser() {
         this.tempatKonser = tempatKonser;
     }
 
+    public Tiket getTiket() {
+        return this.tiket;
+    }
+
+    public void setTiket(Tiket tiket) {
+        this.tiket = tiket;
+    }
+
     @Override
     public String toString() {
         return "{" +
@@ -61,12 +66,4 @@ public Jadwalkonser() {
             ", tempatKonser='" + getTempatKonser() + "'" +
             "}";
     }
-
-    public void setTiket(Tiket tiket2) {
-    }
-
-    public Tiket getTiket() {
-        return null;
-    }
-
 }
