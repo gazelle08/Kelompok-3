@@ -120,8 +120,8 @@ public class App {
     }
 
     public static void initCustomer() {
-        Customer customer1 = new Customer(1, "John Doe", "john.doe@example.com");
-        Customer customer2 = new Customer(2, "Jane Smith", "jane.smith@example.com");
+        Customer customer1 = new Customer(1, "Pharita", "pharr23@gmail.com");
+        Customer customer2 = new Customer(2, "Raju Rafael", "rajraf.smith@gmail.com");
         customer.add(customer1);
         customer.add(customer2);
     }
