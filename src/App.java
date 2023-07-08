@@ -61,7 +61,7 @@ public class App {
     public static void inputDataReservasi() {
 
         // Menampilkan daftar jadwal konser
-        int idReservasiTerakhir = 11240;
+    int idReservasiTerakhir = 11240;
     System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
     Integer idJadwalKonser = input.nextInt();
     Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
@@ -73,14 +73,6 @@ public class App {
 if (jadwalKonser != null) {
     // Menghasilkan ID Reservasi baru
     int idReservasiBaru = idReservasiTerakhir + 1;
-
-        System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
-        Integer idJadwalKonser = input.nextInt();
-        Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
-        Scanner input = new Scanner(System.in);
-        Integer idReservasi, jumlahTiket;
-        System.out.println("Masukkan ID Reservasi : ");
-        idReservasi = input.nextInt();
 
     Reservasi tmpReservasi = new Reservasi<>(idReservasiBaru, customer, jadwalKonser, null, jumlahTiket);
     reservasi.add(tmpReservasi);
