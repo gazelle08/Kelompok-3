@@ -191,7 +191,6 @@ public class App {
         System.out.println("Jenis Tiket: " + tiket.getJenisTiket());
         System.out.println("Harga Tiket: " + tiket.getHargaTiket());
         System.out.println("Tempat Duduk: " + tiket.getTempatDuduk());
-        sts
         System.out.println("===================================");
     }
 }
