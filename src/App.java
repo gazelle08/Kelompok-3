@@ -70,11 +70,10 @@ public class App {
     System.out.println("Masukkan Jumlah Tiket : ");
     jumlahTiket = input.nextInt();
 
-<<<<<<< HEAD
 if (jadwalKonser != null) {
     // Menghasilkan ID Reservasi baru
     int idReservasiBaru = idReservasiTerakhir + 1;
-=======
+
         System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
         Integer idJadwalKonser = input.nextInt();
         Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
@@ -82,7 +81,6 @@ if (jadwalKonser != null) {
         Integer idReservasi, jumlahTiket;
         System.out.println("Masukkan ID Reservasi : ");
         idReservasi = input.nextInt();
->>>>>>> 22867d200e10934c26f0411badf4740780a51771
 
     Reservasi tmpReservasi = new Reservasi<>(idReservasiBaru, customer, jadwalKonser, null, jumlahTiket);
     reservasi.add(tmpReservasi);
