@@ -1,6 +1,3 @@
-/*
- * Nama: Jerry Robert
- */
 package model;
 
 public class Tiket {
@@ -9,6 +6,7 @@ public class Tiket {
     private Double hargaTiket;
     private String tempatDuduk;
     private Reservasi reservasii;
+    private Jadwalkonser jadwalkonser;
 
 
     public Tiket() {
@@ -20,7 +18,9 @@ public class Tiket {
         this.hargaTiket = hargaTiket;
         this.tempatDuduk = tempatDuduk;
         this.reservasii = reservasii;
+        this.jadwalkonser = jadwalkonser;
     }
+
 
     public Integer getIdTiket() {
         return this.idTiket;
@@ -62,6 +62,14 @@ public class Tiket {
         this.reservasii = reservasii;
     }
 
+    public Jadwalkonser getJadwalkonser() {
+        return this.jadwalkonser;
+    }
+
+    public void setJadwalkonser(Jadwalkonser jadwalkonser) {
+        this.jadwalkonser = jadwalkonser;
+    }
+
     @Override
     public String toString() {
         return "{" +
@@ -70,7 +78,7 @@ public class Tiket {
             ", hargaTiket='" + getHargaTiket() + "'" +
             ", tempatDuduk='" + getTempatDuduk() + "'" +
             ", reservasii='" + getReservasii() + "'" +
+            ", jadwalkonser='" + getJadwalkonser() + "'" +
             "}";
     }
-
-}
+} 
