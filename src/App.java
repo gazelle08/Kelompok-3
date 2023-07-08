@@ -38,6 +38,7 @@ public class App {
     }
 
     public static void showJadwalkonser() {
+        System.out.println();
         System.out.println("Daftar Jadwal Konser:");
         for (Jadwalkonser j : jadwalkonserList) {
             cetakJadwalkonser(j);
@@ -62,12 +63,14 @@ public class App {
 
 // Menampilkan daftar jadwal konser
 int idReservasiTerakhir = 11240;
+System.out.println();
 System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
 Integer idJadwalKonser = input.nextInt();
 Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
 String jenisTiket;
 
 if (jadwalKonser != null) {
+    System.out.println();
     System.out.println("Pilih Jenis Tiket (1: VIP, 2: Regular): ");
     int jenisTiketChoice = input.nextInt();
 
@@ -81,6 +84,7 @@ if (jadwalKonser != null) {
     }
 
     Integer jumlahTiket;
+    System.out.println();
     System.out.println("Masukkan Jumlah Tiket : ");
     jumlahTiket = input.nextInt();
 
@@ -101,6 +105,7 @@ if (jadwalKonser != null) {
  
   public static void inputDataPembayaran() {
         Scanner input = new Scanner(System.in);
+        System.out.println();
         System.out.println("Pembayaran");
         System.out.println("Masukkan ID Reservasi : ");
         Integer idReservasi = input.nextInt();
