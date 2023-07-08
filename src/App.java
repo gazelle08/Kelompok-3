@@ -61,24 +61,39 @@ public class App {
     public static void inputDataReservasi() {
 
         // Menampilkan daftar jadwal konser
+        int idReservasiTerakhir = 11240;
+    System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
+    Integer idJadwalKonser = input.nextInt();
+    Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
+    Scanner input = new Scanner(System.in);
+    Integer jumlahTiket;
+    System.out.println("Masukkan Jumlah Tiket : ");
+    jumlahTiket = input.nextInt();
 
-        System.out.println("Masukkan ID Jadwal Konser : ");
+<<<<<<< HEAD
+if (jadwalKonser != null) {
+    // Menghasilkan ID Reservasi baru
+    int idReservasiBaru = idReservasiTerakhir + 1;
+=======
+        System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
         Integer idJadwalKonser = input.nextInt();
         Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
         Scanner input = new Scanner(System.in);
         Integer idReservasi, jumlahTiket;
         System.out.println("Masukkan ID Reservasi : ");
         idReservasi = input.nextInt();
+>>>>>>> 22867d200e10934c26f0411badf4740780a51771
 
-        System.out.println("Masukkan Jumlah Tiket : ");
-        jumlahTiket = input.nextInt();
-        
-        if (jadwalKonser != null) {
-            Reservasi tmpReservasi = new Reservasi<>(idReservasi, customer, jadwalKonser, null, jumlahTiket);
-            reservasi.add(tmpReservasi);
-            System.out.println("Reservasi berhasil ditambahkan!");
-        } else {
-            System.out.println("Jadwal konser tidak ditemukan.");
+    Reservasi tmpReservasi = new Reservasi<>(idReservasiBaru, customer, jadwalKonser, null, jumlahTiket);
+    reservasi.add(tmpReservasi);
+
+    // Memperbarui ID Reservasi terakhir yang digunakan
+    idReservasiTerakhir = idReservasiBaru;
+
+        System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
+        } 
+    else {
+        System.out.println("Jadwal konser tidak ditemukan.");
         }
     }
 
