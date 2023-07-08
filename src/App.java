@@ -114,7 +114,7 @@ public class App {
     input.nextLine();
     Reservasi reservasiTerakhir = null;
     for (Reservasi r : reservasi) {
-        if (r.getIdReservasi() == idReservasi) {
+        if (r.getIdReservasi().equals(idReservasi)) {
             reservasiTerakhir = r;
             break;
         }
