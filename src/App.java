@@ -110,6 +110,7 @@ if (jadwalKonser != null) {
  
 public static void inputDataPembayaran() {
     Scanner input = new Scanner(System.in);
+    System.out.println();
     System.out.println("Data Pembayaran Tiket Anda");
     System.out.println("Masukkan ID Reservasi : ");
     Integer idReservasi = input.nextInt();
