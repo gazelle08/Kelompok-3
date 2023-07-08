@@ -66,26 +66,39 @@ public class App {
     Integer idJadwalKonser = input.nextInt();
     Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
     Scanner input = new Scanner(System.in);
-    Integer jumlahTiket;
-    System.out.println("Masukkan Jumlah Tiket : ");
-    jumlahTiket = input.nextInt();
+    if (jadwalKonser != null) {
+        System.out.println("Pilih Jenis Tiket (1: VIP, 2: Regular): ");
+        int jenisTiketChoice = input.nextInt();
+        String jenisTiket;
 
-if (jadwalKonser != null) {
-    // Menghasilkan ID Reservasi baru
-    int idReservasiBaru = idReservasiTerakhir + 1;
-
-    Reservasi tmpReservasi = new Reservasi<>(idReservasiBaru, customer, jadwalKonser, null, jumlahTiket);
-    reservasi.add(tmpReservasi);
-
-    // Memperbarui ID Reservasi terakhir yang digunakan
-    idReservasiTerakhir = idReservasiBaru;
-
-        System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
-        } 
-    else {
-        System.out.println("Jadwal konser tidak ditemukan.");
+        if (jenisTiketChoice == 1) {
+            jenisTiket = "VIP";
+        } else if (jenisTiketChoice == 2) {
+            jenisTiket = "Regular";
+        } else {
+            System.out.println("Pilihan Jenis Tiket tidak valid.");
+            return;
         }
+        Integer jumlahTiket;
+        System.out.println("Masukkan Jumlah Tiket : ");
+        jumlahTiket = input.nextInt();
+
+        if (jadwalKonser != null) {
+            // Menghasilkan ID Reservasi baru
+            int idReservasiBaru = idReservasiTerakhir + 1;
+
+            Reservasi tmpReservasi = new Reservasi<>(idReservasiBaru, customer, jadwalKonser, null, jumlahTiket);
+            reservasi.add(tmpReservasi);
+
+            // Memperbarui ID Reservasi terakhir yang digunakan
+            idReservasiTerakhir = idReservasiBaru;
+
+            System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
+        }
+    } else {
+        System.out.println("Jadwal konser tidak ditemukan.");
     }
+}
 
   public static void inputDataPembayaran() {
         Scanner input = new Scanner(System.in);
