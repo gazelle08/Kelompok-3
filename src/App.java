@@ -5,6 +5,7 @@ import model.Tiket;
 import model.Customer;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class App {
     static ArrayList<Reservasi> reservasi = new ArrayList<Reservasi>();
@@ -22,9 +23,10 @@ public class App {
     }
 
     public static void inputDataCustomer() {
-        Scanner input = new Scanner(System.in);
-        Integer idCustomer;
-        String nama, alamatEmail;
+    Scanner input = new Scanner(System.in);
+    Integer idCustomer;
+    String nama, alamatEmail;
+    try {
         System.out.println("Masukkan ID Customer : ");
         idCustomer = input.nextInt();
         input.nextLine();
@@ -35,7 +37,11 @@ public class App {
 
         Customer tmpCustomer = new Customer(idCustomer, nama, alamatEmail);
         customer.add(tmpCustomer);
+    } catch (InputMismatchException e) {
+        System.out.println("Input yang Anda masukkan tidak valid.");
+        input.nextLine(); // Membersihkan input yang tidak valid
     }
+}
 
     public static void showJadwalkonser() {
         System.out.println();
