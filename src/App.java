@@ -99,38 +99,44 @@ if (jadwalKonser != null) {
 }
 }
  
-  public static void inputDataPembayaran() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Pembayaran");
-        System.out.println("Masukkan ID Reservasi : ");
-        Integer idReservasi = input.nextInt();
-        Reservasi reservasiTerakhir = null;
-        for (Reservasi r : reservasi) {
-            if (r.getIdReservasi() == idReservasi) {
-                reservasiTerakhir = r;
-                break;
-            }
-        }
-
-        if (reservasiTerakhir != null) {
-            double totalPembayaran = reservasiTerakhir.getJumlahTiket() * reservasiTerakhir.getJadwalkonserr().getTiket().getHargaTiket();
-            System.out.println("Total Pembayaran: " + totalPembayaran);
-
-            System.out.println("Masukkan Metode Pembayaran : ");
-            String metodePembayaran = input.next();
-
-            Pembayaran pembayaran = new Pembayaran(reservasiTerakhir.getIdReservasi(), metodePembayaran, idReservasi, totalPembayaran, reservasiTerakhir);
-            reservasiTerakhir.setPembayaran(pembayaran);
-
-            System.out.println("Pembayaran berhasil ditambahkan!");
+public static void inputDataPembayaran() {
+    Scanner input = new Scanner(System.in);
+    System.out.println("Data Pembayaran Tiket Anda");
+    System.out.println("Masukkan ID Reservasi : ");
+    Integer idReservasi = input.nextInt();
+    Reservasi reservasiTerakhir = null;
+    for (Reservasi r : reservasi) {
+        if (r.getIdReservasi().equals(idReservasi)) {
+            reservasiTerakhir = r;
+            break;
         }
     }
-    public static void cetakTiket(Reservasi reservasi) {
-        System.out.println("ID Tiket: " + reservasi.getTiket().getIdTiket());
-        System.out.println("Jumlah Tiket: " + reservasi.getJumlahTiket());
-        System.out.println("Harga Tiket: " + reservasi.getTiket().getHargaTiket());
-        System.out.println("Tempat Duduk: " + reservasi.getTiket().getTempatDuduk());
-     }
+
+    if (reservasiTerakhir != null) {
+        double totalPembayaran = reservasiTerakhir.getJumlahTiket() * reservasiTerakhir.getJadwalkonserr().getTiket().getHargaTiket();
+        System.out.println("Total Pembayaran: " + totalPembayaran);
+
+        System.out.println("Masukkan Metode Pembayaran : ");
+        String metodePembayaran = input.next();
+
+        Pembayaran pembayaran = new Pembayaran(reservasiTerakhir.getIdReservasi(), metodePembayaran, idReservasi, totalPembayaran, reservasiTerakhir);
+        reservasiTerakhir.setPembayaran(pembayaran);
+
+        System.out.println("Pembayaran berhasil ditambahkan!");
+
+        // Menampilkan data reservasi
+        System.out.println("Data Reservasi:");
+        System.out.println("ID Reservasi: " + reservasiTerakhir.getIdReservasi());
+        System.out.println("Customer: " + reservasiTerakhir.getCustomer());
+        System.out.println("Jadwal Konser: " + reservasiTerakhir.getJadwalkonserr().getNamaKonser());
+        System.out.println("Jumlah Tiket: " + reservasiTerakhir.getJumlahTiket());
+        System.out.println("Harga Tiket: " + reservasiTerakhir.getJadwalkonserr().getTiket().getHargaTiket());
+        System.out.println("Tempat Duduk: " + reservasiTerakhir.getJadwalkonserr().getTiket().getTempatDuduk());
+    } else {
+        System.out.println("Reservasi dengan ID tersebut tidak ditemukan.");
+    }
+}
+
 
     public static void init() {
         initCustomer();
@@ -148,16 +154,17 @@ if (jadwalKonser != null) {
         Tiket tiket1 = new Tiket(556431, "VIP", 750000.00, "setVIP15", null);
         Tiket tiket2 = new Tiket(556461, "Reguler", 450000.00, "setReguler53", null);
         Tiket tiket3 = new Tiket(557541, "Reguler", 450000.00, "setReguler34", null);
-
+    
         Jadwalkonser konser1 = new Jadwalkonser(112, "STAR LIGHT", "ASTRO", "Indonesia Convention Exhibition (ICE)");
         konser1.setTiket(tiket1);
         Jadwalkonser konser2 = new Jadwalkonser(113, "BORN PINK", "BLACKPINK", "Gelora Bung Karno (GBK)");
         konser2.setTiket(tiket2);
         Jadwalkonser konser3 = new Jadwalkonser(114, "REVE FESTIVAL", "RED VELVET", "Jakarta Convention Center (JCC)");
         konser3.setTiket(tiket3);
-
+    
         jadwalkonserList.add(konser1);
         jadwalkonserList.add(konser2);
         jadwalkonserList.add(konser3);
     }
+    
 }
