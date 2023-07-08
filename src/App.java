@@ -12,7 +12,6 @@ public class App {
     static ArrayList<Jadwalkonser> jadwalkonserList = new ArrayList<Jadwalkonser>();
 
     static Scanner input = new Scanner(System.in);
-    static int idReservasiTerakhir = 11240;
     public static void main(String[] args) throws Exception {
         init();
         inputDataCustomer();
