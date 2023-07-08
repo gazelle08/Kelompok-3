@@ -107,7 +107,7 @@ public class App {
         }
     }
 
-public static void inputDataPembayaran() {
+    public static void inputDataPembayaran() {
     System.out.println();
     System.out.println("Data Pembayaran Tiket Anda");
     System.out.println("Masukkan ID Reservasi : ");
