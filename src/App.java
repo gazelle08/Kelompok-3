@@ -63,7 +63,6 @@ public class App {
 
 // Menampilkan daftar jadwal konser
 int idReservasiTerakhir = 11240;
-System.out.println();
 System.out.println("Masukkan ID Jadwal Konser yang akan anda ikuti : ");
 Integer idJadwalKonser = input.nextInt();
 Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
