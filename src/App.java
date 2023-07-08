@@ -140,7 +140,7 @@ if (jadwalKonser != null) {
         konser1.setTiket(tiket1);
         Jadwalkonser konser2 = new Jadwalkonser(113, "BORN PINK", "BLACKPINK", "Gelora Bung Karno (GBK)");
         konser2.setTiket(tiket2);
-        Jadwalkonser konser3 = new Jadwalkonser(114, "REVE FESTIVAL", "RED VELVED", "Jakarta Convention Center (JCC)");
+        Jadwalkonser konser3 = new Jadwalkonser(114, "REVE FESTIVAL", "RED VELVET", "Jakarta Convention Center (JCC)");
         konser3.setTiket(tiket3);
 
         jadwalkonserList.add(konser1);
