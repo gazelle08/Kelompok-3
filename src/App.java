@@ -39,6 +39,7 @@ public class App {
         Scanner input = new Scanner(System.in);
         Integer idCustomer;
         String nama, alamatEmail;
+        System.out.println("Masukkan ID Customer : ");
         idCustomer = input.nextInt();
         input.nextLine();
         System.out.println("Masukkan Nama : ");
