@@ -5,6 +5,7 @@ import model.Tiket;
 import model.Customer;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class App {
     static ArrayList<Reservasi> reservasi = new ArrayList<Reservasi>();
@@ -36,9 +37,11 @@ public class App {
     }
 
     public static void inputDataCustomer() {
-        Scanner input = new Scanner(System.in);
-        Integer idCustomer;
-        String nama, alamatEmail;
+    Scanner input = new Scanner(System.in);
+    Integer idCustomer;
+    String nama, alamatEmail;
+
+    try {
         System.out.println("Masukkan ID Customer : ");
         idCustomer = input.nextInt();
         input.nextLine();
@@ -49,7 +52,11 @@ public class App {
 
         Customer tmpCustomer = new Customer(idCustomer, nama, alamatEmail);
         customer.add(tmpCustomer);
+    } catch (InputMismatchException e) {
+        System.out.println("Terjadi kesalahan masukan. Pastikan Anda memasukkan tipe data yang sesuai.");
+        input.nextLine(); // Membersihkan masukan yang tidak valid
     }
+}
 
     public static void showJadwalkonser() {
         System.out.println();
@@ -181,9 +188,9 @@ public static void inputDataPembayaran() {
         Tiket tiket1 = new Tiket(556431, "VIP", 750000.00, "setVIP15", null, null);
         Tiket tiket2 = new Tiket(556461, "Regular", 450000.00, "setReguler53", null, null);
         Tiket tiket3 = new Tiket(557541, "Reguler", 450000.00, "setReguler34", null, null);
-        Tiket tiket4 = new Tiket(556431, "VIP", 750000.00, "setVIP28", null, null);
-        Tiket tiket5 = new Tiket(556461, "VIP", 750000.00, "setVIP12", null, null);
-        Tiket tiket6 = new Tiket(557541, "Reguler", 450000.00, "setReguler79", null, null);
+        Tiket tiket4 = new Tiket(556424, "VIP", 750000.00, "setVIP28", null, null);
+        Tiket tiket5 = new Tiket(556487, "VIP", 750000.00, "setVIP12", null, null);
+        Tiket tiket6 = new Tiket(557554, "Reguler", 450000.00, "setReguler79", null, null);
 
         Jadwalkonser konser1 = new Jadwalkonser(112, "STAR LIGHT", "ASTRO", "Indonesia Convention Exhibition (ICE)");
         konser1.setTiket(tiket1);
