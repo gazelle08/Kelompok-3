@@ -52,6 +52,7 @@ public class App {
     }
 
     public static void showJadwalkonser() {
+        System.out.println();
         System.out.println("Daftar Jadwal Konser:");
         for (Jadwalkonser j : jadwalkonserList) {
             cetakJadwalkonser(j);
@@ -149,6 +150,7 @@ public static void inputDataPembayaran() {
         System.out.println("Pembayaran berhasil ditambahkan!");
     
         // Menampilkan data reservasi
+        System.out.println();
         System.out.println("Data Reservasi:");
         System.out.println("ID Reservasi: " + reservasiTerpilih.getIdReservasi());
         System.out.println("Customer: " + reservasiTerpilih.getCustomer());
@@ -158,6 +160,7 @@ public static void inputDataPembayaran() {
         System.out.println("Tempat Duduk: " + reservasiTerpilih.getJadwalkonserr().getTiket().getTempatDuduk());
         
         // Cetak tiket
+        System.out.println();
         System.out.println("Cetak Tiket? (ya/tidak): ");
         String cetakTiketChoice = input.nextLine();
         
@@ -208,6 +211,7 @@ public static void inputDataPembayaran() {
     }
     
     public static void cetakTiket(Tiket tiket) {
+        System.out.println();
         System.out.println("TIKET KONSER ANDA");
         System.out.println("================================== ");
         System.out.println("ID Tiket: " + tiket.getIdTiket());
