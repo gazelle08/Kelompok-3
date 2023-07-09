@@ -52,6 +52,7 @@ public class App {
     }
 
     public static void showJadwalkonser() {
+        System.out.println();
         System.out.println("Daftar Jadwal Konser:");
         for (Jadwalkonser j : jadwalkonserList) {
             cetakJadwalkonser(j);
@@ -149,6 +150,7 @@ public static void inputDataPembayaran() {
         System.out.println("Pembayaran berhasil ditambahkan!");
     
         // Menampilkan data reservasi
+        System.out.println();
         System.out.println("Data Reservasi:");
         System.out.println("ID Reservasi: " + reservasiTerpilih.getIdReservasi());
         System.out.println("Customer: " + reservasiTerpilih.getCustomer());
@@ -158,6 +160,7 @@ public static void inputDataPembayaran() {
         System.out.println("Tempat Duduk: " + reservasiTerpilih.getJadwalkonserr().getTiket().getTempatDuduk());
         
         // Cetak tiket
+        System.out.println();
         System.out.println("Cetak Tiket? (ya/tidak): ");
         String cetakTiketChoice = input.nextLine();
         
@@ -176,10 +179,10 @@ public static void inputDataPembayaran() {
 
     public static void initJadwalkonser() {
         Tiket tiket1 = new Tiket(556431, "VIP", 750000.00, "setVIP15", null, null);
-        Tiket tiket2 = new Tiket(556461, "Regular", 450000.0, "setReguler53", null, null);
+        Tiket tiket2 = new Tiket(556461, "Regular", 450000.00, "setReguler53", null, null);
         Tiket tiket3 = new Tiket(557541, "Reguler", 450000.00, "setReguler34", null, null);
         Tiket tiket4 = new Tiket(556431, "VIP", 750000.00, "setVIP28", null, null);
-        Tiket tiket5 = new Tiket(556461, "VIP", 750000.0, "setVIP12", null, null);
+        Tiket tiket5 = new Tiket(556461, "VIP", 750000.00, "setVIP12", null, null);
         Tiket tiket6 = new Tiket(557541, "Reguler", 450000.00, "setReguler79", null, null);
 
         Jadwalkonser konser1 = new Jadwalkonser(112, "STAR LIGHT", "ASTRO", "Indonesia Convention Exhibition (ICE)");
@@ -208,6 +211,7 @@ public static void inputDataPembayaran() {
     }
     
     public static void cetakTiket(Tiket tiket) {
+        System.out.println();
         System.out.println("TIKET KONSER ANDA");
         System.out.println("================================== ");
         System.out.println("ID Tiket: " + tiket.getIdTiket());
