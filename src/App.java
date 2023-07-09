@@ -107,12 +107,16 @@ public class App {
                 tiket = new Tiket(12345, "VIP", 750000.0, "setVIP15", null, jadwalKonser);
             } else if (jenisTiket.equals("Regular")) {
                 tiket = new Tiket(67890, "Regular", 450000.0, "setReguler53", null, jadwalKonser);
+            } else {
+                System.out.println("Pilihan Jenis Tiket tidak valid.");
+                return;
             }
+    
             Reservasi tmpReservasi = new Reservasi(idReservasiBaru, customer, jadwalKonser, tiket, jumlahTiket);
             reservasi.add(tmpReservasi);
-
+    
             idReservasiTerakhir = idReservasiBaru; // Perbarui ID Reservasi terakhir
-
+    
             System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
         }
     }
@@ -174,14 +178,20 @@ public static void inputDataPembayaran() {
         Tiket tiket1 = new Tiket(556431, "VIP", 750000.00, "setVIP15", null, null);
         Tiket tiket2 = new Tiket(556461, "Regular", 450000.0, "setReguler53", null, null);
         Tiket tiket3 = new Tiket(557541, "Reguler", 450000.00, "setReguler34", null, null);
-    
+        Tiket tiket4 = new Tiket(556431, "VIP", 750000.00, "setVIP28", null, null);
+        Tiket tiket5 = new Tiket(556461, "VIP", 750000.0, "setVIP12", null, null);
+        Tiket tiket6 = new Tiket(557541, "Reguler", 450000.00, "setReguler79", null, null);
+
         Jadwalkonser konser1 = new Jadwalkonser(112, "STAR LIGHT", "ASTRO", "Indonesia Convention Exhibition (ICE)");
         konser1.setTiket(tiket1);
+        konser1.setTiket(tiket6);
         Jadwalkonser konser2 = new Jadwalkonser(113, "BORN PINK", "BLACKPINK", "Gelora Bung Karno (GBK)");
         konser2.setTiket(tiket2);
+        konser2.setTiket(tiket4);
         Jadwalkonser konser3 = new Jadwalkonser(114, "REVE FESTIVAL", "RED VELVET", "Jakarta Convention Center (JCC)");
         konser3.setTiket(tiket3);
-    
+        konser3.setTiket(tiket5);
+
         jadwalkonserList.add(konser1);
         jadwalkonserList.add(konser2);
         jadwalkonserList.add(konser3);
