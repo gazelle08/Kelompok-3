@@ -139,7 +139,7 @@ public static void inputDataPembayaran() {
     
     if (reservasiTerpilih != null) {
         double totalPembayaran = reservasiTerpilih.getJumlahTiket() * reservasiTerpilih.getJadwalkonserr().getTiket().getHargaTiket();
-        System.out.println("Total Pembayaran: " + totalPembayaran);
+        System.out.println("Pembayaran: " + totalPembayaran);
     
         System.out.println("Masukkan Metode Pembayaran : ");
         String metodePembayaran = input.nextLine();
