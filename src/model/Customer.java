@@ -42,22 +42,9 @@ public class Customer {
     @Override
     public String toString() {
         return "{" +
-            " idCustomer='" + getIdCustomer() + "'" +
+            " idCustomer='" + getIdCostumer() + "'" +
             ", nama='" + getNama() + "'" +
             ", alamatEmail='" + getAlamatEmail() + "'" +
             "}";
     }
-
-    public String getIdCustomer() {
-        return null;
-    }
-
-    public int size() {
-        return 0;
-    }
-
-    public Customer get(int i) {
-        return null;
-    }
-    
 }
