@@ -71,10 +71,9 @@ public class App {
         }
         return null;
     }
-
+    static int idReservasiTerakhir = 11240;
     public static void inputDataReservasi() {
         // Menampilkan daftar jadwal konser
-        int idReservasiTerakhir = 11240;
         System.out.println("Masukkan ID Jadwal Konser yang akan Anda ikuti : ");
         Integer idJadwalKonser = input.nextInt();
         Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
@@ -102,23 +101,21 @@ public class App {
             // Menghasilkan ID Reservasi baru
             int idReservasiBaru = idReservasiTerakhir + 1;
     
-            Tiket tiket = new Tiket(); // Inisialisasi objek Tiket
+            Tiket tiket = null; // Inisialisasi objek Tiket
             // Tentukan objek Tiket berdasarkan jenis tiket
             if (jenisTiket.equals("VIP")) {
                 tiket = new Tiket(12345, "VIP", 750000.0, "setVIP15", null, jadwalKonser);
             } else if (jenisTiket.equals("Regular")) {
                 tiket = new Tiket(67890, "Regular", 450000.0, "setReguler53", null, jadwalKonser);
             }
-    
             Reservasi tmpReservasi = new Reservasi(idReservasiBaru, customer, jadwalKonser, tiket, jumlahTiket);
             reservasi.add(tmpReservasi);
-    
-            // Memperbarui ID Reservasi terakhir yang digunakan
-            idReservasiTerakhir = idReservasiBaru + 1;
-    
+
+            idReservasiTerakhir = idReservasiBaru; // Perbarui ID Reservasi terakhir
+
             System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
         }
-    }    
+    }
 
 public static void inputDataPembayaran() {
     System.out.println();
@@ -175,7 +172,7 @@ public static void inputDataPembayaran() {
 
     public static void initJadwalkonser() {
         Tiket tiket1 = new Tiket(556431, "VIP", 750000.00, "setVIP15", null, null);
-        Tiket tiket2 = new Tiket(556461, "Reguler", 450000.00, "setReguler53", null, null);
+        Tiket tiket2 = new Tiket(556461, "Regular", 450000.0, "setReguler53", null, null);
         Tiket tiket3 = new Tiket(557541, "Reguler", 450000.00, "setReguler34", null, null);
     
         Jadwalkonser konser1 = new Jadwalkonser(112, "STAR LIGHT", "ASTRO", "Indonesia Convention Exhibition (ICE)");
@@ -188,7 +185,8 @@ public static void inputDataPembayaran() {
         jadwalkonserList.add(konser1);
         jadwalkonserList.add(konser2);
         jadwalkonserList.add(konser3);
-    }    
+    }
+        
     public static void showTiket() {
         System.out.println("Daftar Tiket:");
         for (Jadwalkonser j : jadwalkonserList) {
