@@ -65,12 +65,12 @@ public class App {
         Integer idJadwalKonser = input.nextInt();
         Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
         String jenisTiket = null;
-
+    
         if (jadwalKonser != null) {
             System.out.println("Pilih Jenis Tiket (1: VIP, 2: Regular): ");
             int jenisTiketChoice = input.nextInt();
             input.nextLine();
-
+    
             if (jenisTiketChoice == 1) {
                 jenisTiket = "VIP";
             } else if (jenisTiketChoice == 2) {
@@ -79,15 +79,15 @@ public class App {
                 System.out.println("Pilihan Jenis Tiket tidak valid.");
                 return;
             }
-
+    
             Integer jumlahTiket;
             System.out.println("Masukkan Jumlah Tiket : ");
             jumlahTiket = input.nextInt();
             input.nextLine();
-
+    
             // Menghasilkan ID Reservasi baru
             int idReservasiBaru = idReservasiTerakhir + 1;
-
+    
             Tiket tiket = new Tiket(); // Inisialisasi objek Tiket
             // Tentukan objek Tiket berdasarkan jenis tiket
             if (jenisTiket.equals("VIP")) {
@@ -95,67 +95,66 @@ public class App {
             } else if (jenisTiket.equals("Regular")) {
                 tiket = new Tiket(67890, "Regular", 450000.0, "setReguler53", null, jadwalKonser);
             }
-
+    
             Reservasi tmpReservasi = new Reservasi(idReservasiBaru, customer, jadwalKonser, tiket, jumlahTiket);
             reservasi.add(tmpReservasi);
-
+    
             // Memperbarui ID Reservasi terakhir yang digunakan
             idReservasiTerakhir = idReservasiBaru;
-
+    
             System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
-            
-            // Cetak tiket
-            System.out.println("Cetak Tiket? (ya/tidak): ");
-            String cetakTiketChoice = input.nextLine();
-            
-            if (cetakTiketChoice.equalsIgnoreCase("ya")) {
-                cetakTiket(tiket);
-            }
-        } else {
-            System.out.println("Jadwal konser tidak ditemukan.");
         }
-    }
+    }    
 
-    public static void inputDataPembayaran() {
-        System.out.println();
-        System.out.println("Data Pembayaran Tiket Anda");
-        System.out.println("Masukkan ID Reservasi : ");
-        Integer idReservasi = input.nextInt();
-        input.nextLine();
+public static void inputDataPembayaran() {
+    System.out.println();
+    System.out.println("Data Pembayaran Tiket Anda");
+    System.out.println("Masukkan ID Reservasi : ");
+    Integer idReservasi = input.nextInt();
+    input.nextLine();
 
-        Reservasi reservasiTerpilih = null;
-        for (Reservasi r : reservasi) {
-            if (r.getIdReservasi().equals(idReservasi)) {
-                reservasiTerpilih = r;
-                break;
-            }
-        }
-
-        if (reservasiTerpilih != null) {
-            double totalPembayaran = reservasiTerpilih.getJumlahTiket() * reservasiTerpilih.getJadwalkonserr().getTiket().getHargaTiket();
-            System.out.println("Total Pembayaran: " + totalPembayaran);
-
-            System.out.println("Masukkan Metode Pembayaran : ");
-            String metodePembayaran = input.nextLine();
-
-            Pembayaran pembayaran = new Pembayaran(reservasiTerpilih.getIdReservasi(), metodePembayaran, idReservasi, totalPembayaran, reservasiTerpilih);
-            reservasiTerpilih.setPembayaran(pembayaran);
-
-            System.out.println("Pembayaran berhasil ditambahkan!");
-
-            // Menampilkan data reservasi
-            System.out.println("Data Reservasi:");
-            System.out.println("ID Reservasi: " + reservasiTerpilih.getIdReservasi());
-            System.out.println("Customer: " + reservasiTerpilih.getCustomer());
-            System.out.println("Jadwal Konser: " + reservasiTerpilih.getJadwalkonserr().getNamaKonser());
-            System.out.println("Jumlah Tiket: " + reservasiTerpilih.getJumlahTiket());
-            System.out.println("Harga Tiket: " + reservasiTerpilih.getJadwalkonserr().getTiket().getHargaTiket());
-            System.out.println("Tempat Duduk: " + reservasiTerpilih.getJadwalkonserr().getTiket().getTempatDuduk());
-        } else {
-            System.out.println("Reservasi dengan ID tersebut tidak ditemukan.");
+    Reservasi reservasiTerpilih = null;
+    for (Reservasi r : reservasi) {
+        if (r.getIdReservasi().equals(idReservasi)) {
+            reservasiTerpilih = r;
+            break;
         }
     }
     
+    if (reservasiTerpilih != null) {
+        double totalPembayaran = reservasiTerpilih.getJumlahTiket() * reservasiTerpilih.getJadwalkonserr().getTiket().getHargaTiket();
+        System.out.println("Total Pembayaran: " + totalPembayaran);
+    
+        System.out.println("Masukkan Metode Pembayaran : ");
+        String metodePembayaran = input.nextLine();
+    
+        Pembayaran pembayaran = new Pembayaran(reservasiTerpilih.getIdReservasi(), metodePembayaran, idReservasi, totalPembayaran, reservasiTerpilih);
+        reservasiTerpilih.setPembayaran(pembayaran);
+    
+        System.out.println("Pembayaran berhasil ditambahkan!");
+    
+        // Menampilkan data reservasi
+        System.out.println("Data Reservasi:");
+        System.out.println("ID Reservasi: " + reservasiTerpilih.getIdReservasi());
+        System.out.println("Customer: " + reservasiTerpilih.getCustomer());
+        System.out.println("Jadwal Konser: " + reservasiTerpilih.getJadwalkonserr().getNamaKonser());
+        System.out.println("Jumlah Tiket: " + reservasiTerpilih.getJumlahTiket());
+        System.out.println("Harga Tiket: " + reservasiTerpilih.getJadwalkonserr().getTiket().getHargaTiket());
+        System.out.println("Tempat Duduk: " + reservasiTerpilih.getJadwalkonserr().getTiket().getTempatDuduk());
+        
+        // Cetak tiket
+        System.out.println("Cetak Tiket? (ya/tidak): ");
+        String cetakTiketChoice = input.nextLine();
+        
+        if (cetakTiketChoice.equalsIgnoreCase("ya")) {
+            cetakTiket(reservasiTerpilih.getJadwalkonserr().getTiket());
+        }
+        
+    } else {
+        System.out.println("Reservasi dengan ID tersebut tidak ditemukan.");
+    }
+}
+
     public static void init() {
         initJadwalkonser();
     }
@@ -192,5 +191,5 @@ public class App {
         System.out.println("Harga Tiket: " + tiket.getHargaTiket());
         System.out.println("Tempat Duduk: " + tiket.getTempatDuduk());
         System.out.println("===================================");
-    }
+    }
 }
