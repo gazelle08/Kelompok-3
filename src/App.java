@@ -38,6 +38,7 @@ public class App {
     }
 
     public static void showJadwalkonser() {
+        System.out.println();
         System.out.println("Daftar Jadwal Konser:");
         for (Jadwalkonser j : jadwalkonserList) {
             cetakJadwalkonser(j);
@@ -59,12 +60,12 @@ public class App {
     }
 
     public static void inputDataReservasi() {
-        // Menampilkan daftar jadwal konser
         int idReservasiTerakhir = 11240;
         System.out.println("Masukkan ID Jadwal Konser yang akan Anda ikuti : ");
         Integer idJadwalKonser = input.nextInt();
         Jadwalkonser jadwalKonser = getJadwalKonserById(idJadwalKonser);
         String jenisTiket = null;
+        double hargaTiket = 0.0;
     
         if (jadwalKonser != null) {
             System.out.println("Pilih Jenis Tiket (1: VIP, 2: Regular): ");
@@ -73,8 +74,10 @@ public class App {
     
             if (jenisTiketChoice == 1) {
                 jenisTiket = "VIP";
+                hargaTiket = jadwalKonser.getTiket().getHargaTiket(); // Setel harga tiket VIP
             } else if (jenisTiketChoice == 2) {
                 jenisTiket = "Regular";
+                hargaTiket = jadwalKonser.getTiket().getHargaTiket(); // Setel harga tiket Regular
             } else {
                 System.out.println("Pilihan Jenis Tiket tidak valid.");
                 return;
@@ -91,9 +94,9 @@ public class App {
             Tiket tiket = new Tiket(); // Inisialisasi objek Tiket
             // Tentukan objek Tiket berdasarkan jenis tiket
             if (jenisTiket.equals("VIP")) {
-                tiket = new Tiket(12345, "VIP", 750000.0, "setVIP15", null, jadwalKonser);
+                tiket = new Tiket(12345, "VIP", hargaTiket, "setVIP15", null, jadwalKonser);
             } else if (jenisTiket.equals("Regular")) {
-                tiket = new Tiket(67890, "Regular", 450000.0, "setReguler53", null, jadwalKonser);
+                tiket = new Tiket(67890, "Regular", hargaTiket, "setReguler53", null, jadwalKonser);
             }
     
             Reservasi tmpReservasi = new Reservasi(idReservasiBaru, customer, jadwalKonser, tiket, jumlahTiket);
@@ -104,7 +107,8 @@ public class App {
     
             System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
         }
-    }    
+    }
+       
 
 public static void inputDataPembayaran() {
     System.out.println();
@@ -125,8 +129,10 @@ public static void inputDataPembayaran() {
         double totalPembayaran = reservasiTerpilih.getJumlahTiket() * reservasiTerpilih.getJadwalkonserr().getTiket().getHargaTiket();
         System.out.println("Total Pembayaran: " + totalPembayaran);
     
+        System.out.println();
         System.out.println("Masukkan Metode Pembayaran : ");
         String metodePembayaran = input.nextLine();
+        System.out.println();
     
         Pembayaran pembayaran = new Pembayaran(reservasiTerpilih.getIdReservasi(), metodePembayaran, idReservasi, totalPembayaran, reservasiTerpilih);
         reservasiTerpilih.setPembayaran(pembayaran);
@@ -134,6 +140,7 @@ public static void inputDataPembayaran() {
         System.out.println("Pembayaran berhasil ditambahkan!");
     
         // Menampilkan data reservasi
+        System.out.println();
         System.out.println("Data Reservasi:");
         System.out.println("ID Reservasi: " + reservasiTerpilih.getIdReservasi());
         System.out.println("Customer: " + reservasiTerpilih.getCustomer());
@@ -143,6 +150,7 @@ public static void inputDataPembayaran() {
         System.out.println("Tempat Duduk: " + reservasiTerpilih.getJadwalkonserr().getTiket().getTempatDuduk());
         
         // Cetak tiket
+        System.out.println();
         System.out.println("Cetak Tiket? (ya/tidak): ");
         String cetakTiketChoice = input.nextLine();
         
