@@ -15,4 +15,5 @@ fitur yang terdapat pada sistem informasi ini:
 - Anggota:
 - Elaine Agustina (030812200037)
 - Vanessa Thames (03081220006)
+- Jerry Robert (03081220046)
 
