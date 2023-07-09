@@ -198,10 +198,13 @@ public static void inputDataPembayaran() {
     }
     
     public static void cetakTiket(Tiket tiket) {
+        System.out.println("TIKET KONSER ANDA");
+        System.out.println("================================== ");
         System.out.println("ID Tiket: " + tiket.getIdTiket());
         System.out.println("Jenis Tiket: " + tiket.getJenisTiket());
         System.out.println("Harga Tiket: " + tiket.getHargaTiket());
         System.out.println("Tempat Duduk: " + tiket.getTempatDuduk());
         System.out.println("===================================");
+        System.out.println("TERIMA KASIH TELAH MENGGUNAKAN TIKHITZ :)");
     }
 }
