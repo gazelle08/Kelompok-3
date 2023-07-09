@@ -17,8 +17,22 @@ public class App {
         init();
         inputDataCustomer();
         showJadwalkonser();
-        inputDataReservasi();
-        inputDataPembayaran();
+    
+        boolean continueOrder = true;
+    
+        while (continueOrder) {
+            inputDataReservasi();
+            inputDataPembayaran();
+    
+            System.out.println("Apakah Anda ingin memesan tiket lagi? (ya/tidak): ");
+            String continueChoice = input.nextLine();
+    
+            if (!continueChoice.equalsIgnoreCase("ya")) {
+                continueOrder = false;
+            }
+        }
+    
+        System.out.println("Terima kasih telah menggunakan TIKHITZ!");
     }
 
     public static void inputDataCustomer() {
@@ -100,7 +114,7 @@ public class App {
             reservasi.add(tmpReservasi);
     
             // Memperbarui ID Reservasi terakhir yang digunakan
-            idReservasiTerakhir = idReservasiBaru;
+            idReservasiTerakhir = idReservasiBaru + 1;
     
             System.out.println("Reservasi berhasil ditambahkan! ID Reservasi: " + idReservasiBaru);
         }
